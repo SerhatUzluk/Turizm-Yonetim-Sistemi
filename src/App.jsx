@@ -4,7 +4,7 @@ function App() {
   console.log("deneme2");
 
   return (
-    <>      
+    <>                
     <MainLayout>
       {/* font kullanımı */}
       <div className="font-gemunu text-lightBlue">
