@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
