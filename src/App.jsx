@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import MainLayout from "./layouts/MainLayout";
 
 function App() {  
+  console.log("deneme2");
 
   return (
-    <>  
-    <h1>Hello</h1>    
+    <>                
+    <MainLayout>
+      {/* font kullanımı */}
+      <div className="font-gemunu text-lightBlue">
+        deneme
+      </div>
+    </MainLayout>
+      
     </>
   )
 }
