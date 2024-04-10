@@ -1,17 +1,16 @@
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 
-function App() {  
-  
+function App() {
+  console.log("deneme2");
 
   return (
-    <>                
-    <MainLayout>
-      <HomePage/>
-    </MainLayout>
-      
+    <>
+      <MainLayout>
+        <HomePage />
+      </MainLayout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
