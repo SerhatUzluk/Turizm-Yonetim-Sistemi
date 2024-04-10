@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import icon from "../images/smr-logo.png";
@@ -156,5 +155,6 @@ function Navbar() {
     </Disclosure>
   );
 }
+
 
 export default Navbar;
