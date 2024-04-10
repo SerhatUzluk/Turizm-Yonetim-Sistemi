@@ -1,10 +1,13 @@
+import HeroSection from "./components/HeroSection/HeroSection";
+import Slider from "./components/Slider/Slider";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 
-function App() {  
+function App() {
   console.log("deneme2");
 
   return (
+<<<<<<< HEAD
     <>                
     <MainLayout>
 
@@ -16,8 +19,15 @@ function App() {
 
     </MainLayout>
       
+=======
+    <>
+      <MainLayout>
+        <Slider />
+        <HeroSection />
+      </MainLayout>
+>>>>>>> main
     </>
-  )
+  );
 }
 
-export default App
+export default App;
