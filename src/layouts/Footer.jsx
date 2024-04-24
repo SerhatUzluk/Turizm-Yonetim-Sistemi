@@ -14,7 +14,7 @@ import Maps from "../components/Maps";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col pt-2">
+
       <div className="flex-grow"></div>
       <footer className="bg-darkBlue text-light  text-center font-gemunu border-t-2 border-light h-70">
         <div className="container mx-auto py-4">
