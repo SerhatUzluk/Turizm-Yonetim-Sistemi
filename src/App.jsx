@@ -7,25 +7,11 @@ function App() {
   console.log("deneme2");
 
   return (
-<<<<<<< HEAD
-    <>                
-    <MainLayout>
-
-      {/* font kullanımı */}
-      <div className="font-gemunu text-lightBlue">
-        deneme
-      </div>
-
-
-    </MainLayout>
-      
-=======
     <>
       <MainLayout>
         <Slider />
         <HeroSection />
       </MainLayout>
->>>>>>> main
     </>
   );
 }
