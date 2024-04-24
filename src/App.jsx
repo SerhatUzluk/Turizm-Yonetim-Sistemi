@@ -1,5 +1,3 @@
-import HeroSection from "./components/HeroSection/HeroSection";
-import Slider from "./components/Slider/Slider";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 
