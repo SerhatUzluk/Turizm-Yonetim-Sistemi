@@ -6,7 +6,7 @@ import icon from "../images/smr-logo.png";
 const navigation = [
   { name: "Anasayfa", href: "/", current: true },
   { name: "Hakkımızda", href: "#", current: false },
-  { name: "iletişim", href: "#", current: false },
+  { name: "iletişim", href: "/iletisim", current: false },
 ];
 
 const transactions = [
