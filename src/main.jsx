@@ -1,11 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RegistrationPage from "./pages/RegistrationPage.jsx";
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import RegistrationPage from './pages/RegistrationPage.jsx'
 import AboutPage from "./pages/AboutPage.jsx";
-import MainLayout from "./layouts/MainLayout.jsx";
+import ContactPage from './pages/ContactPage.jsx'
+import MainLayout from './layouts/MainLayout.jsx'
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -26,7 +28,13 @@ const router = createBrowserRouter([
     element: <AboutPage />,
     errorElement: <></>,
   },
+  {
+    path: '/iletisim',
+    element: <ContactPage/>,
+    errorElement:<></>
+  }
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // <React.StrictMode>
