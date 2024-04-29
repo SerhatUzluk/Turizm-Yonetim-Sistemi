@@ -10,7 +10,8 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import ExpeditionPage from "./pages/ExpeditionPage.jsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
-
+import LoginPage from './pages/LoginPage.jsx'
+import ResetPassword from './pages/ResetPassword.jsx'
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -31,10 +32,16 @@ const router = createBrowserRouter([
     element: <AboutPage />,
     errorElement: <></>,
   },
-{
-    path: '/iletisim',
-    element: <ContactPage/>,
-    errorElement:<></>
+  {
+
+    path: "/iletisim",
+    element: <ContactPage />,
+    errorElement: <></>,
+  },
+  {
+    path: "/sefer",
+    element: <ExpeditionPage />,
+    errorElement: <></>,
   },
   {
     path: '/giris',
@@ -45,12 +52,8 @@ const router = createBrowserRouter([
     path: '/sifre-yenile',
     element: <ResetPassword/>,
     errorElement:<></>
-  },
-  {
-    path: "/sefer",
-    element: <ExpeditionPage />,
-    errorElement: <></>,
-  },
+  }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

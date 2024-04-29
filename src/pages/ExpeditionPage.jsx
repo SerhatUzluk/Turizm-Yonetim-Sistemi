@@ -1,5 +1,6 @@
 import React from 'react'
 import SideBar from '../components/SideBar/SideBar'
+import TableList from '../components/Table/TableList'
 
 const ExpeditionPage = () => {
   return (
@@ -8,7 +9,9 @@ const ExpeditionPage = () => {
             <SideBar />
         </div>
 
-        <div className=' flex-[5]'>sadas</div>
+        <div className=' flex-[5]'>
+          <TableList />
+        </div>
     </div>
   )
 }
