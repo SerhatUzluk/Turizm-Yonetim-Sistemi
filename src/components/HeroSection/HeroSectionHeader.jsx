@@ -4,7 +4,7 @@ const HeroSectionHeader = () => {
   return (
     <div className="flex justify-center items-center flex-col gap-5 p-4  rounded-xl my-8 shadow-xl">
       <div>
-        <h2 className=" font-gemunu text-6xl font-bold">SVR ile Güvenli Yolculuk</h2>
+        <h2 className=" font-gemunu text-6xl font-bold">SMR ile Güvenli Yolculuk</h2>
       </div>
 
       <div className=" text-center font-semibold w-1/2">

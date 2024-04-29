@@ -12,7 +12,7 @@ const navigation = [
 const transactions = [
   { name: "Kayıt Ol", href: "#" },
   { name: "Giriş Yap", href: "#" },
-  { name: "Seferleri Görüntüle", href: "#" },
+  { name: "Seferleri Görüntüle", href: "/sefer" },
 ];
 
 function classNames(...classes) {
@@ -110,7 +110,7 @@ function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="#"
+                              href="/sefer"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
