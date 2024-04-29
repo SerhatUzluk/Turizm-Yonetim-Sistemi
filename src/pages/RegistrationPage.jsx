@@ -31,7 +31,7 @@ export default function RegistrationPage() {
 
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-light font-gemunu">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 font-gemunu">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Link to="/">
             <img
@@ -192,12 +192,12 @@ export default function RegistrationPage() {
 
           <p className="mt-10 text-center text-lg text-blue">
             Zaten üye misiniz?{" "}
-            <a
-              href="#"
+            <Link
+              to="/giris"
               className="font-semibold leading-6 transition duration-500 ease-in-out bg-gradient-to-r hover:bg-gradient-to-r hover:from-darkBlue hover:to-blue hover:text-white rounded"
             >
               Giriş Yapmak için tıklayın.
-            </a>
+            </Link>
           </p>
         </div>
       </div>
