@@ -11,6 +11,7 @@ import ExpeditionPage from "./pages/ExpeditionPage.jsx";
 import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 
+
 {
   /*Route oluşturmak için router oluşturuldu.*/
 }
@@ -30,10 +31,20 @@ const router = createBrowserRouter([
     element: <AboutPage />,
     errorElement: <></>,
   },
+{
+    path: '/iletisim',
+    element: <ContactPage/>,
+    errorElement:<></>
+  },
   {
-    path: "/iletisim",
-    element: <ContactPage />,
-    errorElement: <></>,
+    path: '/giris',
+    element: <LoginPage/>,
+    errorElement:<></>
+  },
+  {
+    path: '/sifre-yenile',
+    element: <ResetPassword/>,
+    errorElement:<></>
   },
   {
     path: "/sefer",
