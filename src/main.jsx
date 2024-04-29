@@ -8,6 +8,8 @@ import RegistrationPage from './pages/RegistrationPage.jsx'
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from './pages/ContactPage.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import ResetPassword from './pages/ResetPassword.jsx'
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -31,6 +33,16 @@ const router = createBrowserRouter([
   {
     path: '/iletisim',
     element: <ContactPage/>,
+    errorElement:<></>
+  },
+  {
+    path: '/giris',
+    element: <LoginPage/>,
+    errorElement:<></>
+  },
+  {
+    path: '/sifre-yenile',
+    element: <ResetPassword/>,
     errorElement:<></>
   }
 ]);
