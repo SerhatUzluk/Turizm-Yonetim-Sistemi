@@ -20,7 +20,7 @@
     height: 80px;
     background-image: url("https://st2.depositphotos.com/3254189/10949/v/450/depositphotos_109493492-stock-illustration-3d-image-of-red-carpet.jpg");
     background-size: cover;
-    background-size: 90px 110px;        
+    background-size: 80px 90px;        
 }
 
 .rightSide{
@@ -34,7 +34,7 @@
 .busLayoutType2{
     border: 1px solid gray;
     border-radius: 7% 3% 3% 7% / 15% 40% 40% 15%;
-    width: 68%;
+    width: 64%;
     display: flex;
     background-color: rgb(234, 239, 250);
 }

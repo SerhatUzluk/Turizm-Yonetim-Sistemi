@@ -34,7 +34,7 @@
 .busLayout{
     border: 1px solid gray;
     border-radius: 7% 3% 3% 7% / 15% 40% 40% 15%;
-    width: 57%;
+    width: 54%;
     display: flex;
     background-color: rgb(234, 239, 250);
 }
