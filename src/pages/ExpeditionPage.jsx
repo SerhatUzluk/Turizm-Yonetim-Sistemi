@@ -1,6 +1,9 @@
 import React from 'react'
 import SideBar from '../components/SideBar/SideBar'
 import TableList from '../components/Table/TableList'
+import BusTemplateType1 from '../components/BusTemplate/BusTemplateType1'
+import BusTemplateType2 from '../components/BusTemplate/BusTemplateType2'
+import BusTemplateType3 from '../components/BusTemplate/BusTemplateType3'
 
 const ExpeditionPage = () => {
   return (
@@ -11,6 +14,9 @@ const ExpeditionPage = () => {
 
         <div className=' flex-[5]'>
           <TableList />
+          <BusTemplateType2/> 
+          <BusTemplateType1/>
+          <BusTemplateType3/>        
         </div>
     </div>
   )
