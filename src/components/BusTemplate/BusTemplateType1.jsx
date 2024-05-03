@@ -1,9 +1,10 @@
 import React from "react";
 import "../Style/BusType1Style.css";
+import SeatInformationBar from "./SeatInformationBar";
 function BusTemplateType1() {
   return (
     <>
-      <div className="busLayout">
+      <div className="busLayout font-gemunu">
         <div className="driverPart">
           <svg width="60" height="60" viewBox="0 0 100 100" className="">
             <circle
@@ -56,10 +57,17 @@ function BusTemplateType1() {
               fill="none"
             />
 
-            <line x1="100" y1="100" x2="100" y2="0" stroke="black" stroke-width="10" />            
+            <line
+              x1="100"
+              y1="100"
+              x2="100"
+              y2="0"
+              stroke="black"
+              stroke-width="10"
+            />
           </svg>
         </div>
-       
+
         <div className="seatsPart">
           <div className="rightSide">
             <div className="doubleSeat">
@@ -241,6 +249,8 @@ function BusTemplateType1() {
           </div>
         </div>
       </div>
+      
+      <SeatInformationBar/>
     </>
   );
 }

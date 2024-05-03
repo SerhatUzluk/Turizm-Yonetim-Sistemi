@@ -1,9 +1,10 @@
 import React from "react";
 import '../Style/BustType3Style.css'
+import SeatInformationBar from "./SeatInformationBar";
 function BusTemplateType3() {
   return (
     <>
-      <div className="busLayoutType3">
+      <div className="busLayoutType3 font-gemunu">
         <div className="driverPart">
           <svg width="60" height="60" viewBox="0 0 100 100" className="">
             <circle
@@ -259,6 +260,7 @@ function BusTemplateType3() {
           </div>
         </div>
       </div>
+      <SeatInformationBar/>
     </>
   );
 }
