@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaChevronUp } from "react-icons/fa";
-
+import BusTemplateType3 from '../BusTemplate/BusTemplateType3.jsx'
+import BusTemplateType1 from '../BusTemplate/BusTemplateType1.jsx'
+import BusTemplateType2 from '../BusTemplate/BusTemplateType2.jsx'
+import Campaigns from '../Campaigns/Campaigns.jsx'
 const TableList = () => {
   const [isDropDown, setIsDropDown] = useState(false);
 
@@ -62,10 +65,10 @@ const TableList = () => {
               </div>
             </tr>
           </div>
-
+        <div className="block">
           <div className="w-5/6 h-72 border-2 ml-auto mr-auto flex">
             <div className="w-4/5 flex justify-center items-center">
-              şablon kısmı
+              <BusTemplateType2/>
             </div>
 
             <div className=" w-1/5 border flex items-end justify-center">
@@ -75,6 +78,10 @@ const TableList = () => {
                 </button>
               </div>
             </div>
+          </div>
+          <div>
+            <Campaigns/>
+          </div>
           </div>
         </div>
       ) : (

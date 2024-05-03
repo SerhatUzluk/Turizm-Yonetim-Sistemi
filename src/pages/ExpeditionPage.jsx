@@ -14,11 +14,7 @@ const ExpeditionPage = () => {
         </div>
 
         <div className=' flex-[5]'>
-          <TableList />
-          <BusTemplateType2/> 
-          <BusTemplateType1/>
-          <BusTemplateType3/> 
-          <Campaigns/>       
+          <TableList />                
         </div>
     </div>
   )
