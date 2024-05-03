@@ -4,6 +4,7 @@ import SeatInformationBar from "./SeatInformationBar";
 function BusTemplateType3() {
   return (
     <>
+    <div className="block">
       <div className="busLayoutType3 font-gemunu">
         <div className="driverPart">
           <svg width="60" height="60" viewBox="0 0 100 100" className="">
@@ -261,6 +262,8 @@ function BusTemplateType3() {
         </div>
       </div>
       <SeatInformationBar/>
+      </div>
+
     </>
   );
 }

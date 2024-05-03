@@ -15,7 +15,7 @@ const ExpeditionDetail = () => {
     }
 
   return (
-    <div className=' border w-[440px] h-[440px] px-2 rounded relative'>
+    <div className=' border w-[440px] h-[440px] px-2 rounded relative bg-white'>
         <div>
             <div className=' flex justify-center border-b py-2'>
                 <h2 className=' font-bold'>Sefer Detayları</h2>
