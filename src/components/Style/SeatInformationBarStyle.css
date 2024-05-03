@@ -1,0 +1,33 @@
+.seatInformation{
+    display: flex;
+    justify-content: space-evenly;
+    width: 54%; 
+    margin-top: 15px;   
+    font-size: small;
+    color: rgb(57, 59, 59);
+    background-color: #7FC7D9;        
+}
+
+.blueSeat{
+    background-color: rgb(4, 4, 93);
+    border: 1px solid;
+    width: 25px;
+    height: 35px;
+    border-radius: 25% 10% 10% 25%;            
+}
+
+.pinkSeat{
+    background-color: rgb(227, 117, 135);
+    border: 1px solid;
+    width: 25px;
+    height: 35px;
+    border-radius: 25% 10% 10% 25%;        
+}
+
+.yellowSeat{
+    background-color: rgb(241, 241, 79);
+    border: 1px solid;
+    width: 25px;
+    height: 35px;
+    border-radius: 25% 10% 10% 25%;        
+}
