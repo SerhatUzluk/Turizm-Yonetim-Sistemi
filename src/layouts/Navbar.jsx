@@ -13,6 +13,7 @@ const transactions = [
   { name: "Kayıt Ol", href: "#" },
   { name: "Giriş Yap", href: "#" },
   { name: "Seferleri Görüntüle", href: "/sefer" },
+  { name: "Bilet Sorgula", href: "/bilet-sorgu" },
 ];
 
 function classNames(...classes) {
@@ -121,7 +122,22 @@ function Navbar() {
                               Sefer İşlemleri
                             </a>
                           )}
-                        </Menu.Item>                       
+                        </Menu.Item>          
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="/bilet-sorgu"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-lg"
+                              )}
+                            >
+                              Bilet Sorgula
+                            </a>
+                          )}
+                        </Menu.Item>                
                       </div>
                     </Menu.Items>
                   </Transition>

@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store.js";
 import LoginPage from './pages/LoginPage.jsx'
 import ResetPassword from './pages/ResetPassword.jsx'
+import TicketPage from "./pages/TicketPage.jsx";
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
   {
     path: '/sifre-yenile',
     element: <ResetPassword/>,
+    errorElement:<></>
+  },
+  {
+    path: '/bilet-sorgu',
+    element: <TicketPage />,
     errorElement:<></>
   }
 
