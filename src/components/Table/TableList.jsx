@@ -75,8 +75,8 @@ const TableList = () => {
             </tr>
           </div>
         <div className="block">
-          <div className="w-5/6 h-72 border-2 ml-auto mr-auto flex">
-            <div className="w-4/5 flex justify-center items-center">
+          <div className="w-5/6 h-96 border-2 ml-auto mr-auto flex">
+            <div className="w-4/5 flex justify-center items-center mt-8">
               <BusTemplateType2/>
             </div>
 
