@@ -13,6 +13,7 @@ const transactions = [
   { name: "Kayıt Ol", href: "#" },
   { name: "Giriş Yap", href: "#" },
   { name: "Seferleri Görüntüle", href: "/sefer" },
+  { name: "Bilet Sorgula", href: "/bilet-sorgu" },
 ];
 
 function classNames(...classes) {
@@ -24,7 +25,7 @@ function Navbar() {
     <Disclosure as="nav" className="bg-darkBlue font-gemunu">
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-[80px]">
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-[80px] z-50">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
@@ -121,7 +122,22 @@ function Navbar() {
                               Sefer İşlemleri
                             </a>
                           )}
-                        </Menu.Item>                       
+                        </Menu.Item>          
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="/bilet-sorgu"
+                              className={classNames(
+                                active
+                                  ? "bg-gray-100 text-gray-900"
+                                  : "text-gray-700",
+                                "block px-4 py-2 text-lg"
+                              )}
+                            >
+                              Bilet Sorgula
+                            </a>
+                          )}
+                        </Menu.Item>                
                       </div>
                     </Menu.Items>
                   </Transition>

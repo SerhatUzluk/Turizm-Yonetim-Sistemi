@@ -15,7 +15,7 @@ const ExpeditionDetail = () => {
     }
 
   return (
-    <div className=' border w-[440px] h-[440px] px-2 rounded relative bg-white'>
+    <div className=' border w-[440px] h-[440px] px-2 rounded relative bg-gray-900 text-white'>
         <div>
             <div className=' flex justify-center border-b py-2'>
                 <h2 className=' font-bold'>Sefer Detayları</h2>
@@ -45,17 +45,17 @@ const ExpeditionDetail = () => {
                     <div className=' font-semibold'>Güzergah:</div>
                     <div>
                         <ul className=' flex flex-col gap-2'>
-                            <li className=' flex gap-5 bg-gray-100 rounded'>
+                            <li className=' flex gap-5 bg-gray-600 rounded'>
                                 <span className=' w-20 font-bold'>23:59</span>
                                 <span>İstanbul</span>
                             </li>
 
-                            <li className=' flex gap-5 bg-gray-100 rounded'>
+                            <li className=' flex gap-5 bg-gray-600 rounded'>
                                 <span className=' w-20 font-bold'>3:59</span>
                                 <span>Bursa</span>
                             </li>
 
-                            <li className=' flex gap-5 bg-gray-100 rounded'>
+                            <li className=' flex gap-5 bg-gray-600 rounded'>
                                 <span className=' w-20 font-bold'>7:59</span>
                                 <span>Anakara</span>
                             </li>
