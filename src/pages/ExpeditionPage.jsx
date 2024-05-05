@@ -16,7 +16,7 @@ const ExpeditionPage = () => {
   }
 
   return (
-    <div className=' relative flex p-3 gap-3 min-h-screen'>
+    <div className=' relative flex p-3 gap-3 min-h-screen z-0'>
         <div className=' flex-1'>
             <SideBar />
         </div>   
