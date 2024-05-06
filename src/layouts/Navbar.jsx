@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import icon from "../images/smr-logo.png";
-import { RiMenu2Fill } from "react-icons/ri";
+
 const navigation = [
   { name: "Anasayfa", href: "/", current: true },
   { name: "Hakkımızda", href: "/hakkimizda", current: false },
@@ -22,7 +22,7 @@ function classNames(...classes) {
 function Navbar() {
   return (
     <Disclosure as="nav" className="bg-darkBlue font-gemunu">
-      {() => (
+      {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-[80px]">
             <div className="relative flex h-16 items-center justify-between">
@@ -35,11 +35,7 @@ function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mt-4">
                 <div className="flex flex-shrink-0 items-center">
-                  <img
-                    className="h-16 w-auto rounded"
-                    src={icon}
-                    alt="Your Company"
-                  />
+                  <img className="h-16 w-auto rounded" src={icon} alt="Your Company" />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4 mt-3">
@@ -60,6 +56,7 @@ function Navbar() {
                     ))}
                   </div>
                 </div>
+<<<<<<< HEAD
                 <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden sm:hidden mt-2 ml-10 ">
                   <div className="mt-3">
                     <Menu
@@ -114,15 +111,14 @@ function Navbar() {
                     className="px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 sm:w-[110px] md:w-[240px] lg:w-[440px]"
                   />
                 </div>
+=======
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
               </div>
               {/*İşlemler Dropdown Menü*/}
               <div className="mt-3">
-                <Menu
-                  as="div"
-                  className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
-                >
+                <Menu as="div" className="relative inline-block text-left w-[120px]">
                   <div>
-                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
+                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                       İşlemler
                     </Menu.Button>
                   </div>
@@ -156,7 +152,7 @@ function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="/kayit"
+                              href="/kayit"                              
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -182,6 +178,7 @@ function Navbar() {
                               Sefer İşlemleri
                             </a>
                           )}
+<<<<<<< HEAD
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
@@ -198,6 +195,9 @@ function Navbar() {
                             </a>
                           )}
                         </Menu.Item>
+=======
+                        </Menu.Item>                       
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -231,5 +231,6 @@ function Navbar() {
     </Disclosure>
   );
 }
+
 
 export default Navbar;

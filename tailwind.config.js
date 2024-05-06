@@ -15,8 +15,11 @@ export default {
         'lightBlue': '#7FC7D9',
         'blue': '#365486',
         'darkBlue': '#0F1035',
+<<<<<<< HEAD
         'yellow': '#fcba03',
         'pink':'#a8077d',    
+=======
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
         
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',

@@ -7,21 +7,24 @@
     color: rgb(57, 59, 59);             
 }
 
-.blueSeat{    
+.blueSeat{
+    background-color: rgb(4, 4, 93);
     border: 1px solid;
     width: 25px;
     height: 35px;
     border-radius: 25% 10% 10% 25%;            
 }
 
-.pinkSeat{    
+.pinkSeat{
+    background-color: rgb(227, 117, 135);
     border: 1px solid;
     width: 25px;
     height: 35px;
     border-radius: 25% 10% 10% 25%;        
 }
 
-.yellowSeat{    
+.yellowSeat{
+    background-color: rgb(241, 241, 79);
     border: 1px solid;
     width: 25px;
     height: 35px;
