@@ -5,8 +5,19 @@ import BusTemplateType3 from '../BusTemplate/BusTemplateType3.jsx'
 import BusTemplateType1 from '../BusTemplate/BusTemplateType1.jsx'
 import BusTemplateType2 from '../BusTemplate/BusTemplateType2.jsx'
 import Campaigns from '../Campaigns/Campaigns.jsx'
+import { useDispatch, useSelector } from "react-redux";
+import { modalTrue } from "../../redux/slices/ExpeditionSlice.js";
+import ExpeditionDetail from "./ExpeditionDetail.jsx";
+import { useNavigate } from 'react-router-dom';
+
 const TableList = () => {
   const [isDropDown, setIsDropDown] = useState(false);
+  const navigate = useNavigate();
+
+   const dispatch = useDispatch(); 
+    const handleClickDetail = () => {
+       dispatch(modalTrue()); 
+    };
 
   const handleClickIsDropDownFunc = () => {
     setIsDropDown(true);
@@ -16,8 +27,14 @@ const TableList = () => {
     setIsDropDown(false);
   };
 
+
+  const handleClickButton = () => {
+    navigate('/odeme-sistemi');
+};
+
   return (
     <>
+    <div className=" relative">
       {isDropDown ? (
         <div>
           <div className="w-5/6 border h-18 mr-auto ml-auto mt-10">
@@ -66,14 +83,14 @@ const TableList = () => {
             </tr>
           </div>
         <div className="block">
-          <div className="w-5/6 h-72 border-2 ml-auto mr-auto flex">
-            <div className="w-4/5 flex justify-center items-center">
+          <div className="w-5/6 h-96 border-2 ml-auto mr-auto flex">
+            <div className="w-4/5 flex justify-center items-center mt-8">
               <BusTemplateType2/>
             </div>
 
             <div className=" w-1/5 border flex items-end justify-center">
               <div>
-                <button className="bg-lightBlue text-white h-8 w-16 rounded-xl m-2">
+                <button className="bg-lightBlue text-white h-8 w-16 rounded-xl m-2" onClick={handleClickButton}>
                   Onayla
                 </button>
               </div>
@@ -131,6 +148,14 @@ const TableList = () => {
           </tr>
         </div>
       )}
+
+
+      {
+        isDropDown ? (
+          <button onClick={handleClickDetail} className=" absolute top-20 left-36 bg-darkBlue text-white p-1 rounded cursor-pointer">Sefer Detayları</button>
+        ) : (null)
+      }
+    </div>
     </>
   );
 };

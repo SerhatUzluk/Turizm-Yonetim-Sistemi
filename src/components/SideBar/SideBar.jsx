@@ -29,7 +29,7 @@ const SideBar = () => {
     <>
       {
         isSideBar ? (
-          <div className='relative min-h-screen bg-black bg-opacity-90 py-4 px-1 rounded-xl text-white h-1/2'>
+          <div className='relative min-h-screen bg-darkBlue bg-opacity-90 py-4 px-1 rounded-xl text-white h-1/2'>
           {/* locations */}
             <div className=' w-full mt-8 flex flex-col gap-8 border-b pb-8'>
               <div className='w-full flex items-start flex-col gap-2'>
@@ -109,8 +109,8 @@ const SideBar = () => {
         </div>
         ) : (
           <div>
-            <div className=' absolute left-4 top-100 z-10 text-lightBlue cursor-pointer transition-all hover:scale-110'>
-                <FaChevronCircleRight size={30} onClick={sideBarOpenFunc}/>
+            <div className=' absolute left-4 top-100 z-10 text-lightBlue flex justify-center items-center gap-2 '>
+                <span className=' text-black'>Tüm Filtreler</span> <FaChevronCircleRight size={30} className='cursor-pointer transition-all hover:scale-110' onClick={sideBarOpenFunc}/>
             </div>
           </div>
         )
