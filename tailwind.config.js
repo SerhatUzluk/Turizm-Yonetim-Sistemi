@@ -15,6 +15,9 @@ export default {
         'lightBlue': '#7FC7D9',
         'blue': '#365486',
         'darkBlue': '#0F1035',
+        'yellow': '#fcba03',
+        'pink':'#a8077d',        
+
         
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',
