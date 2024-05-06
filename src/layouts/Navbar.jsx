@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import icon from "../images/smr-logo.png";
-
+import { RiMenu2Fill } from "react-icons/ri";
 const navigation = [
   { name: "Anasayfa", href: "/", current: true },
   { name: "Hakkımızda", href: "/hakkimizda", current: false },
@@ -21,9 +21,10 @@ function classNames(...classes) {
 }
 
 function Navbar() {
+  
   return (
     <Disclosure as="nav" className="bg-darkBlue font-gemunu">
-      {({ open }) => (
+      {() => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 h-[80px] z-50">
             <div className="relative flex h-16 items-center justify-between">
@@ -36,7 +37,11 @@ function Navbar() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start mt-4">
                 <div className="flex flex-shrink-0 items-center">
-                  <img className="h-16 w-auto rounded" src={icon} alt="Your Company" />
+                  <img
+                    className="h-16 w-auto rounded"
+                    src={icon}
+                    alt="Your Company"
+                  />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4 mt-3">
@@ -57,12 +62,69 @@ function Navbar() {
                     ))}
                   </div>
                 </div>
+                <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden sm:hidden mt-2 ml-10 ">
+                  <div className="mt-3">
+                    <Menu
+                      as="div"
+                      className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
+                    >
+                      <div>
+                        <Menu.Button
+                          className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-2 py-2 text-lg font-semibold text-darkBlue shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 mb-5"                          
+                        >
+                          <RiMenu2Fill/>                         
+                        </Menu.Button>
+                      </div>
+
+                      <Transition
+                        as={Fragment}
+                        enter="transition ease-out duration-100"
+                        enterFrom="transform opacity-0 scale-95"
+                        enterTo="transform opacity-100 scale-100"
+                        leave="transition ease-in duration-75"
+                        leaveFrom="transform opacity-100 scale-100"
+                        leaveTo="transform opacity-0 scale-95"
+                      >
+                        <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold">
+                          <div className="py-1">
+                           {navigation.map((item, index) =><Menu.Item>
+                              {({ active }) => (
+                                <a
+                                  href={item.href}
+                                  className={classNames(
+                                    active
+                                      ? "bg-lightBlue text-darkBlue"
+                                      : "bg-darkBlue text-white",
+                                    "block px-4 py-2 text-lg"
+                                  )}
+                                >
+                                  {item.name}
+                                </a>
+                              )}
+                            </Menu.Item>)}
+                            </div>
+                        </Menu.Items>
+                      </Transition>
+                    </Menu>
+                  </div>
+                </div>
+
+                <div className=" sm:mr-[5px] mt-3 ml-8 sm:ml-0 lg:ml-8">
+                  <input
+                    type="text"
+                    placeholder="Ara..."
+                    className="px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 sm:w-[110px] md:w-[240px] lg:w-[440px]"
+                  />
+                </div>
               </div>
               {/*İşlemler Dropdown Menü*/}
               <div className="mt-3">
-                <Menu as="div" className="relative inline-block text-left w-[120px]">
+                <Menu
+                  as="div"
+                  className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
+                >
                   <div>
-                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
                       İşlemler
                     </Menu.Button>
                   </div>
@@ -96,7 +158,7 @@ function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             <a
-                              href="/kayit"                              
+                              href="/kayit"
                               className={classNames(
                                 active
                                   ? "bg-gray-100 text-gray-900"
@@ -122,22 +184,7 @@ function Navbar() {
                               Sefer İşlemleri
                             </a>
                           )}
-                        </Menu.Item>          
-                        <Menu.Item>
-                          {({ active }) => (
-                            <a
-                              href="/bilet-sorgu"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-gray-700",
-                                "block px-4 py-2 text-lg"
-                              )}
-                            >
-                              Bilet Sorgula
-                            </a>
-                          )}
-                        </Menu.Item>                
+
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -171,6 +218,5 @@ function Navbar() {
     </Disclosure>
   );
 }
-
 
 export default Navbar;

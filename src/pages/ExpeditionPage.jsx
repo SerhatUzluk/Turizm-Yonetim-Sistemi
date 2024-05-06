@@ -1,10 +1,10 @@
+
 import React from 'react'
 import SideBar from '../components/SideBar/SideBar'
 import TableList from '../components/Table/TableList'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalFalse } from '../redux/slices/ExpeditionSlice'
 import ExpeditionDetail from '../components/Table/ExpeditionDetail'
-
 
 const ExpeditionPage = () => {
   const dispatch = useDispatch();
@@ -16,6 +16,7 @@ const ExpeditionPage = () => {
   }
 
   return (
+
     <div className=' relative flex p-3 gap-3 min-h-screen z-0'>
         <div className=' flex-1'>
             <SideBar />
@@ -36,7 +37,7 @@ const ExpeditionPage = () => {
       }
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExpeditionPage
+export default ExpeditionPage;

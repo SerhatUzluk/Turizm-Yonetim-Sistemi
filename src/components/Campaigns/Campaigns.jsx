@@ -3,8 +3,22 @@ import { campaignInfo } from "../../CampaignsInfo";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { closeDetails, openDetails } from "../../redux/slices/CampaignSlice";
+import CampaignsPage from "./CampaignsPage";
+
 export function Campaigns() {
   const [currentItemIndex, setCurrentItemIndex] = useState(0);
+  const dispatch = useDispatch();
+
+  const openDetail = () => {
+    dispatch(openDetails());   
+    console.log("a"); 
+  };
+  const closeDetail = () => {
+    dispatch(closeDetails());
+    console.log("b");
+  }
 
   const prevItem = () => {
     setCurrentItemIndex(
@@ -22,7 +36,7 @@ export function Campaigns() {
     }
     return text.slice(0, maxLength) + '...';
   };
-
+  
   return (
     <div className=" w-[620px] mx-auto my-10 font-gemunu">
       <div className=" relative flex border bg-darkBlue">
@@ -42,10 +56,13 @@ export function Campaigns() {
                   <p className=" text-sm md:text-lg italic overflow-hidden w-[250px] mb-[35px]">
                     {truncateText(item.description, 70)}
                   </p>
-                  <Link><button className="btn bg-lightBlue font-semibold rounded p-2 hover:bg-darkBlue hover:text-light absolute bottom-3 duration-300">Detaylar için tıklayınız</button></Link>
+                  <button className="btn bg-lightBlue font-semibold rounded p-2 hover:bg-darkBlue hover:text-light absolute bottom-3 duration-300"
+                    onClick={openDetail}
+                  >Detaylar için tıklayınız</button>                  
                 </div>
               </div>
             )}
+            
           </div>
         ))}
         <div>
