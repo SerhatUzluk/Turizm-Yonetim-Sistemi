@@ -16,8 +16,11 @@ export default {
         'blue': '#365486',
         'darkBlue': '#0F1035',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'yellow': '#fcba03',
         'pink':'#a8077d',    
+=======
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
 =======
 >>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
         

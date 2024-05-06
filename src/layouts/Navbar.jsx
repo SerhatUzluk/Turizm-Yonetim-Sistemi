@@ -57,6 +57,7 @@ function Navbar() {
                   </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden sm:hidden mt-2 ml-10 ">
                   <div className="mt-3">
                     <Menu
@@ -111,6 +112,8 @@ function Navbar() {
                     className="px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 sm:w-[110px] md:w-[240px] lg:w-[440px]"
                   />
                 </div>
+=======
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
 =======
 >>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
               </div>
@@ -179,6 +182,7 @@ function Navbar() {
                             </a>
                           )}
 <<<<<<< HEAD
+<<<<<<< HEAD
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
@@ -195,6 +199,9 @@ function Navbar() {
                             </a>
                           )}
                         </Menu.Item>
+=======
+                        </Menu.Item>                       
+>>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
 =======
                         </Menu.Item>                       
 >>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
