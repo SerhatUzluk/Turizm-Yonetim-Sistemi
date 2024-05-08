@@ -15,6 +15,11 @@ export default {
         'lightBlue': '#7FC7D9',
         'blue': '#365486',
         'darkBlue': '#0F1035',
+<<<<<<< HEAD
+=======
+        'yellow': '#fcba03',
+        'pink':'#a8077d',    
+>>>>>>> 4af3440045c819ee98a82ef0c8307a6f586a91d9
         
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',
