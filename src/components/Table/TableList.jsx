@@ -37,8 +37,8 @@ const TableList = () => {
     <div className=" relative">
       {isDropDown ? (
         <div>
-          <div className="w-5/6 border h-18 mr-auto ml-auto mt-10">
-            <tr className="focus:outline-none h-16 border border-gray-300 flex justify-between  items-center relative">
+          <div className="w-full border h-18 mr-auto ml-auto mt-10">
+            <tr className=" focus:outline-none h-16 border border-gray-300 flex justify-between  items-center relative">
               <td className="pl-5">
                 <p className="text-base font-medium leading-none text-gray-700 mr-2">
                   Logo
@@ -83,12 +83,12 @@ const TableList = () => {
             </tr>
           </div>
         <div className="block">
-          <div className="w-5/6 h-96 border-2 ml-auto mr-auto flex">
-            <div className="w-4/5 flex justify-center items-center mt-8">
+          <div className="w-full h-96 border-2 ml-auto mr-auto flex">
+            <div className="w-full flex justify-center items-center mt-8">
               <BusTemplateType2/>
             </div>
 
-            <div className=" w-1/5 border flex items-end justify-center">
+            <div className=" w-56 border flex items-end justify-center">
               <div>
                 <button className="bg-lightBlue text-white h-8 w-16 rounded-xl m-2" onClick={handleClickButton}>
                   Onayla
@@ -102,7 +102,7 @@ const TableList = () => {
           </div>
         </div>
       ) : (
-        <div className="w-5/6 border h-18 mr-auto ml-auto mt-10">
+        <div className="w-full border h-18 mr-auto ml-auto mt-10">
           <tr className="focus:outline-none h-16 border border-gray-300 flex justify-between  items-center relative">
             <td className="pl-5">
               <p className="text-base font-medium leading-none text-gray-700 mr-2">
