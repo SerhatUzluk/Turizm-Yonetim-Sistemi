@@ -17,12 +17,19 @@ export default {
         'darkBlue': '#0F1035',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'yellow': '#fcba03',
         'pink':'#a8077d',    
 =======
 >>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
 =======
 >>>>>>> 58cc5b4 (Revert "Navbar' a search bölümü eklendi, BusTemplate2 'de renk düzenlemeleri yapıldı ve cinsiyet seçme butonu eklendi. CampaignsPage bileşeni oluşturuldu.")
+=======
+=======
+        'yellow': '#fcba03',
+        'pink':'#a8077d',    
+>>>>>>> 4af3440045c819ee98a82ef0c8307a6f586a91d9
+>>>>>>> 60c1d99e2f5c77b562142cc0279ee6b87884f9ce
         
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',
