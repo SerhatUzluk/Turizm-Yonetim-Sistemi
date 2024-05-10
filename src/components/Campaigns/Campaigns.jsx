@@ -12,12 +12,10 @@ export function Campaigns() {
   const dispatch = useDispatch();
 
   const openDetail = () => {
-    dispatch(openDetails());   
-    console.log("a"); 
+    dispatch(openDetails());        
   };
   const closeDetail = () => {
-    dispatch(closeDetails());
-    console.log("b");
+    dispatch(closeDetails());    
   }
 
   const prevItem = () => {

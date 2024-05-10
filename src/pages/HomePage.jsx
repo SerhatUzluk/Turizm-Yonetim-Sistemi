@@ -4,6 +4,7 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import { Information } from "../BrandInformation.js";
 import { BrandCard } from "../components/BrandCard.jsx";
 import { Link } from "react-router-dom";
+import AccountInfo from "./User/AccountInfo.jsx";
 const HomePage = () => {
   return (
     <div>
@@ -22,7 +23,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </div>
   );
 };
