@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { modalTrue } from "../../redux/slices/ExpeditionSlice.js";
 import ExpeditionDetail from "./ExpeditionDetail.jsx";
 import { useNavigate } from 'react-router-dom';
+import TopLinks from "../TopLinks.jsx";
 
 const TableList = () => {
   const [isDropDown, setIsDropDown] = useState(false);
@@ -34,10 +35,16 @@ const TableList = () => {
 
   return (
     <>
+
+    {/* topLinks */}
+    <div className=" w-full flex justify-start items-center pl-32 mt-2">
+        <TopLinks />
+    </div>
+    
     <div className=" relative">
       {isDropDown ? (
         <div>
-          <div className="w-5/6 border h-18 mr-auto ml-auto mt-10">
+          <div className="w-5/6 border h-18 mr-auto ml-auto mt-6">
             <tr className="focus:outline-none h-16 border border-gray-300 flex justify-between  items-center relative">
               <td className="pl-5">
                 <p className="text-base font-medium leading-none text-gray-700 mr-2">
@@ -88,10 +95,37 @@ const TableList = () => {
               <BusTemplateType2/>
             </div>
 
-            <div className=" w-1/5 border flex items-end justify-center">
+            <div className=" w-1/5 border flex flex-col  justify-between py-2 items-center">
+              <div className=" flex flex-col justify-start w-full pl-8 gap-20">
+                <div className=" mt-8 flex flex-col gap-2 ">
+                  <p className=" font-bold">Seçtiğiniz Koltuklar</p>
+                  <div>
+                    <div className="seatPart">
+                      <button className="seat">49</button>
+                      <button className="back"></button>
+                    </div>
+
+                    <div className="seatPart">
+                      <button className="seat">50</button>
+                      <button className="back"></button>
+                    </div>
+
+                    <div className="seatPart">
+                      <button className="seat">51</button>
+                      <button className="back"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className=" flex flex-col gap-2">
+                  <p className="font-bold">Toplam Fiyat</p>
+                  <span className=" font-bold text-2xl">2196₺</span>
+                </div>
+              </div>
+
               <div>
-                <button className="bg-lightBlue text-white h-8 w-16 rounded-xl m-2" onClick={handleClickButton}>
-                  Onayla
+                <button className="bg-lightBlue hover:bg-darkBlue transition-all text-white p-2 rounded-xl m-2 font-bold" onClick={handleClickButton}>
+                  Onayla ve Devam Et
                 </button>
               </div>
             </div>
