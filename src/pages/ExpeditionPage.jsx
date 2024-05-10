@@ -4,7 +4,7 @@ import TableList from '../components/Table/TableList'
 import { useDispatch, useSelector } from 'react-redux'
 import { modalFalse } from '../redux/slices/ExpeditionSlice'
 import ExpeditionDetail from '../components/Table/ExpeditionDetail'
-
+import CampaignsPage from '../components/Campaigns/CampaignsPage'
 
 const ExpeditionPage = () => {
   const dispatch = useDispatch();
@@ -21,6 +21,7 @@ const ExpeditionPage = () => {
             <SideBar />
         </div>   
         <div className=' flex-[5] z-10'>
+        <CampaignsPage />
           <TableList />                
         </div>
 
