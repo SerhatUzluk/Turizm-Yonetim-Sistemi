@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Style/SeatInformationBarStyle.css'
-function SeatInformationBar() {
+function SeatInformationBar() {  
   return (
     <>
         <div className="seatInformation font-bold font-gemunu">

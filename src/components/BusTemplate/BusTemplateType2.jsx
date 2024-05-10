@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "../Style/BusType2Style.css";
 import SeatInformationBar from "./SeatInformationBar";
-import { FcBusinesswoman, FcBusinessman } from "react-icons/fc";
+import { useDispatch, useSelector } from "react-redux";
+import { isOpen } from "../../redux/slices/GenderButtonSlice";
+import GenderButton from "./GenderButton";
+
 function BusTemplateType2() {
-  const [isOpen, setIsOpen] = useState(false);
+  const { Open } = useSelector((state) => state.genderButton);
   const [seatNumber, setSeatNumber] = useState(null);
-  const [gender, setGender] = useState(null);
+  const dispatch = useDispatch();
   function handleButtonClick(buttonValue) {
-    setIsOpen(!isOpen);
-    setSeatNumber(buttonValue);
-    setGender(null)
+    setSeatNumber(buttonValue);    
   }
-  function handleGenderButtonClick(genderValue){
-    setGender(genderValue)
-  }  
+  const openFunc = () => {
+    dispatch(isOpen());
+  };
 
   return (
     <>
@@ -86,13 +87,27 @@ function BusTemplateType2() {
             <div className="rightSide">
               <div className="doubleSeat">
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(4)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      {
+                        handleButtonClick(4);
+                        openFunc();
+                      }                      
+                    }}
+                  >
                     4
                   </button>
                   <div className="back"></div>
                 </div>
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(3)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(3);
+                      openFunc();
+                    }}
+                  >
                     3
                   </button>
                   <div className="back"></div>
@@ -100,13 +115,25 @@ function BusTemplateType2() {
               </div>
               <div className="doubleSeat">
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(8)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(8);
+                      openFunc();
+                    }}
+                  >
                     8
                   </button>
                   <div className="back"></div>
                 </div>
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(7)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(7);
+                      openFunc();
+                    }}
+                  >
                     7
                   </button>
                   <div className="back"></div>
@@ -116,7 +143,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(12)}
+                    onClick={() => {
+                      handleButtonClick(12);
+                      openFunc();
+                    }}
                   >
                     12
                   </button>
@@ -125,7 +155,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(11)}
+                    onClick={() => {
+                      handleButtonClick(11);
+                      openFunc();
+                    }}
                   >
                     11
                   </button>
@@ -136,7 +169,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(16)}
+                    onClick={() => {
+                      handleButtonClick(16);
+                      openFunc();
+                    }}
                   >
                     16
                   </button>
@@ -145,7 +181,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(15)}
+                    onClick={() => {
+                      handleButtonClick(15);
+                      openFunc();
+                    }}
                   >
                     15
                   </button>
@@ -156,7 +195,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(20)}
+                    onClick={() => {
+                      handleButtonClick(20);
+                      openFunc();
+                    }}
                   >
                     20
                   </button>
@@ -165,7 +207,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(19)}
+                    onClick={() => {
+                      handleButtonClick(19);
+                      openFunc();
+                    }}
                   >
                     19
                   </button>
@@ -176,7 +221,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(24)}
+                    onClick={() => {
+                      handleButtonClick(24);
+                      openFunc();
+                    }}
                   >
                     24
                   </button>
@@ -185,7 +233,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(23)}
+                    onClick={() => {
+                      handleButtonClick(23);
+                      openFunc();
+                    }}
                   >
                     23
                   </button>
@@ -197,7 +248,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(32)}
+                    onClick={() => {
+                      handleButtonClick(32);
+                      openFunc();
+                    }}
                   >
                     32
                   </button>
@@ -206,7 +260,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(31)}
+                    onClick={() => {
+                      handleButtonClick(31);
+                      openFunc();
+                    }}
                   >
                     31
                   </button>
@@ -217,7 +274,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(36)}
+                    onClick={() => {
+                      handleButtonClick(36);
+                      openFunc();
+                    }}
                   >
                     36
                   </button>
@@ -226,7 +286,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(35)}
+                    onClick={() => {
+                      handleButtonClick(35);
+                      openFunc();
+                    }}
                   >
                     35
                   </button>
@@ -237,7 +300,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(40)}
+                    onClick={() => {
+                      handleButtonClick(40);
+                      openFunc();
+                    }}
                   >
                     40
                   </button>
@@ -246,7 +312,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(39)}
+                    onClick={() => {
+                      handleButtonClick(39);
+                      openFunc();
+                    }}
                   >
                     39
                   </button>
@@ -257,7 +326,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(44)}
+                    onClick={() => {
+                      handleButtonClick(44);
+                      openFunc();
+                    }}
                   >
                     44
                   </button>
@@ -266,7 +338,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(43)}
+                    onClick={() => {
+                      handleButtonClick(43);
+                      openFunc();
+                    }}
                   >
                     43
                   </button>
@@ -277,7 +352,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(48)}
+                    onClick={() => {
+                      handleButtonClick(48);
+                      openFunc();
+                    }}
                   >
                     48
                   </button>
@@ -286,7 +364,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(47)}
+                    onClick={() => {
+                      handleButtonClick(47);
+                      openFunc();
+                    }}
                   >
                     47
                   </button>
@@ -297,7 +378,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(52)}
+                    onClick={() => {
+                      handleButtonClick(52);
+                      openFunc();
+                    }}
                   >
                     52
                   </button>
@@ -306,7 +390,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(51)}
+                    onClick={() => {
+                      handleButtonClick(51);
+                      openFunc();
+                    }}
                   >
                     51
                   </button>
@@ -317,7 +404,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(56)}
+                    onClick={() => {
+                      handleButtonClick(56);
+                      openFunc();
+                    }}
                   >
                     56
                   </button>
@@ -326,7 +416,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(55)}
+                    onClick={() => {
+                      handleButtonClick(55);
+                      openFunc();
+                    }}
                   >
                     55
                   </button>
@@ -337,7 +430,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(61)}
+                    onClick={() => {
+                      handleButtonClick(61);
+                      openFunc();
+                    }}
                   >
                     61
                   </button>
@@ -346,7 +442,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(60)}
+                    onClick={() => {
+                      handleButtonClick(60);
+                      openFunc();
+                    }}
                   >
                     60
                   </button>
@@ -355,7 +454,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(59)}
+                    onClick={() => {
+                      handleButtonClick(59);
+                      openFunc();
+                    }}
                   >
                     59
                   </button>
@@ -367,13 +469,25 @@ function BusTemplateType2() {
             <div className="leftSideType2">
               <div className="doubleSeat">
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(2)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(2);
+                      openFunc();
+                    }}
+                  >
                     2
                   </button>
                   <div className="back"></div>
                 </div>
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(1)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(1);
+                      openFunc();
+                    }}
+                  >
                     1
                   </button>
                   <div className="back"></div>
@@ -381,13 +495,25 @@ function BusTemplateType2() {
               </div>
               <div className="doubleSeat">
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(6)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(6);
+                      openFunc();
+                    }}
+                  >
                     6
                   </button>
                   <div className="back"></div>
                 </div>
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(5)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(5);
+                      openFunc();
+                    }}
+                  >
                     5
                   </button>
                   <div className="back"></div>
@@ -397,14 +523,23 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(10)}
+                    onClick={() => {
+                      handleButtonClick(10);
+                      openFunc();
+                    }}
                   >
                     10
                   </button>
                   <div className="back"></div>
                 </div>
                 <div className="seatPart">
-                  <button className="seat focus:bg-yellow" onClick={() => handleButtonClick(9)}>
+                  <button
+                    className="seat focus:bg-yellow"
+                    onClick={() => {
+                      handleButtonClick(9);
+                      openFunc();
+                    }}
+                  >
                     9
                   </button>
                   <div className="back"></div>
@@ -414,7 +549,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(14)}
+                    onClick={() => {
+                      handleButtonClick(14);
+                      openFunc();
+                    }}
                   >
                     14
                   </button>
@@ -423,7 +561,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(13)}
+                    onClick={() => {
+                      handleButtonClick(13);
+                      openFunc();
+                    }}
                   >
                     13
                   </button>
@@ -434,7 +575,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(18)}
+                    onClick={() => {
+                      handleButtonClick(18);
+                      openFunc();
+                    }}
                   >
                     18
                   </button>
@@ -443,7 +587,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(17)}
+                    onClick={() => {
+                      handleButtonClick(17);
+                      openFunc();
+                    }}
                   >
                     17
                   </button>
@@ -454,7 +601,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(22)}
+                    onClick={() => {
+                      handleButtonClick(22);
+                      openFunc();
+                    }}
                   >
                     22
                   </button>
@@ -463,7 +613,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(21)}
+                    onClick={() => {
+                      handleButtonClick(21);
+                      openFunc();
+                    }}
                   >
                     21
                   </button>
@@ -474,7 +627,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(26)}
+                    onClick={() => {
+                      handleButtonClick(26);
+                      openFunc();
+                    }}
                   >
                     26
                   </button>
@@ -483,7 +639,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(25)}
+                    onClick={() => {
+                      handleButtonClick(25);
+                      openFunc();
+                    }}
                   >
                     25
                   </button>
@@ -494,7 +653,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(28)}
+                    onClick={() => {
+                      handleButtonClick(28);
+                      openFunc();
+                    }}
                   >
                     28
                   </button>
@@ -503,7 +665,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(27)}
+                    onClick={() => {
+                      handleButtonClick(27);
+                      openFunc();
+                    }}
                   >
                     27
                   </button>
@@ -514,7 +679,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(30)}
+                    onClick={() => {
+                      handleButtonClick(30);
+                      openFunc();
+                    }}
                   >
                     30
                   </button>
@@ -523,7 +691,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(29)}
+                    onClick={() => {
+                      handleButtonClick(29);
+                      openFunc();
+                    }}
                   >
                     29
                   </button>
@@ -534,7 +705,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(34)}
+                    onClick={() => {
+                      handleButtonClick(34);
+                      openFunc();
+                    }}
                   >
                     34
                   </button>
@@ -543,7 +717,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(33)}
+                    onClick={() => {
+                      handleButtonClick(33);
+                      openFunc();
+                    }}
                   >
                     33
                   </button>
@@ -554,7 +731,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(38)}
+                    onClick={() => {
+                      handleButtonClick(38);
+                      openFunc();
+                    }}
                   >
                     38
                   </button>
@@ -563,7 +743,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(37)}
+                    onClick={() => {
+                      handleButtonClick(37);
+                      openFunc();
+                    }}
                   >
                     37
                   </button>
@@ -574,7 +757,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(42)}
+                    onClick={() => {
+                      handleButtonClick(42);
+                      openFunc();
+                    }}
                   >
                     42
                   </button>
@@ -583,7 +769,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(41)}
+                    onClick={() => {
+                      handleButtonClick(41);
+                      openFunc();
+                    }}
                   >
                     41
                   </button>
@@ -594,7 +783,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(46)}
+                    onClick={() => {
+                      handleButtonClick(46);
+                      openFunc();
+                    }}
                   >
                     46
                   </button>
@@ -603,7 +795,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(45)}
+                    onClick={() => {
+                      handleButtonClick(45);
+                      openFunc();
+                    }}
                   >
                     45
                   </button>
@@ -614,7 +809,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(50)}
+                    onClick={() => {
+                      handleButtonClick(50);
+                      openFunc();
+                    }}
                   >
                     50
                   </button>
@@ -623,7 +821,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(49)}
+                    onClick={() => {
+                      handleButtonClick(49);
+                      openFunc();
+                    }}
                   >
                     49
                   </button>
@@ -634,7 +835,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(54)}
+                    onClick={() => {
+                      handleButtonClick(54);
+                      openFunc();
+                    }}
                   >
                     54
                   </button>
@@ -643,7 +847,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(53)}
+                    onClick={() => {
+                      handleButtonClick(53);
+                      openFunc();
+                    }}
                   >
                     53
                   </button>
@@ -654,7 +861,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(58)}
+                    onClick={() => {
+                      handleButtonClick(58);
+                      openFunc();
+                    }}
                   >
                     58
                   </button>
@@ -663,7 +873,10 @@ function BusTemplateType2() {
                 <div className="seatPart">
                   <button
                     className="seat focus:bg-yellow"
-                    onClick={() => handleButtonClick(57)}
+                    onClick={() => {
+                      handleButtonClick(57);
+                      openFunc();
+                    }}
                   >
                     57
                   </button>
@@ -674,28 +887,9 @@ function BusTemplateType2() {
           </div>
         </div>
         <div className="flex">
-        <SeatInformationBar />
-        {isOpen && (
-          <div className="text-2xl bg-gray-400 w-[115px] h-[50px] pl-2 pr-2 mt-4 ml-6 text-white">            
-              <button className="bg-blue p-2 mr-1 rounded mt-1 focus:scale-105 focus:bg-lightBlue ml-1 focus:border"
-                onClick={() => setGender('Erkek')}
-              >
-                <FcBusinessman />                
-              </button>
-              <button className="bg-pink p-2 rounded ml-1 focus:scale-105 focus:bg-lightBlue focus:border"
-                onClick={() => setGender('Kadın')}
-              >
-                <FcBusinesswoman />                 
-              </button>            
-          </div>
-        )}
-        {isOpen && (
-          <div className="font-semibold bg-gray-400 h-[50px] mt-4 p-1 font-gemunu text-lg">
-          <p className="mt-2">{gender}</p>
+          <SeatInformationBar />
+          <GenderButton Open={Open} />
         </div>
-        )}
-        
-      </div>
       </div>
     </>
   );
