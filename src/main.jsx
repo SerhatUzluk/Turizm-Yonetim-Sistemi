@@ -15,6 +15,7 @@ import ResetPassword from './pages/ResetPassword.jsx'
 import TicketPage from "./pages/TicketPage.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import TicketShowPage from "./pages/TicketShowPage.jsx";
+import TicketPoint from "./pages/TicketPoint.jsx";
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -69,6 +70,11 @@ const router = createBrowserRouter([
   {
     path: '/biletlerim',
     element: <TicketShowPage/>,
+    errorElement:<></>
+  },
+  {
+    path: '/bilet-puan',
+    element: <TicketPoint/>,
     errorElement:<></>
   }
 
