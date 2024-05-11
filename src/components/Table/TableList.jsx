@@ -43,8 +43,8 @@ const TableList = () => {
     
     <div className=" relative">
       {isDropDown ? (
-        <div>
-          <div className="w-5/6 border h-18 mr-auto ml-auto mt-6">
+        <div className="">
+          <div className="w-full border h-18 mr-auto ml-auto mt-6">
             <tr className="focus:outline-none h-16 border border-gray-300 flex justify-between  items-center relative">
               <td className="pl-5">
                 <p className="text-base font-medium leading-none text-gray-700 mr-2">
