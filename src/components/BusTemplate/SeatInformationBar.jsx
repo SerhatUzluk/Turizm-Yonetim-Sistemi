@@ -33,7 +33,11 @@ function SeatInformationBar() {
         </div>
         <p>Boş Koltuk</p>
         </div>
+
+
       </div>
+
+      
     </>
   )
 }
