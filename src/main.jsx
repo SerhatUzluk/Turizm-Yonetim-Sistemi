@@ -16,6 +16,7 @@ import TicketPage from "./pages/TicketPage.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import TicketShowPage from "./pages/TicketShowPage.jsx";
 import TicketPoint from "./pages/TicketPoint.jsx";
+import ShiftPage from "./pages/ShiftPage.jsx";
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -75,6 +76,11 @@ const router = createBrowserRouter([
   {
     path: '/bilet-puan',
     element: <TicketPoint/>,
+    errorElement:<></>
+  },
+  {
+    path:'/vardiya',
+    element:<ShiftPage/>,
     errorElement:<></>
   }
 
