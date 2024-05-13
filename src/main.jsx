@@ -17,6 +17,7 @@ import PaymentPage from "./pages/PaymentPage.jsx";
 import TicketShowPage from "./pages/TicketShowPage.jsx";
 import TicketPoint from "./pages/TicketPoint.jsx";
 import ShiftPage from "./pages/ShiftPage.jsx";
+import CreateExpedition from "./components/Expedition/CreateExpedition.jsx";
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -81,6 +82,11 @@ const router = createBrowserRouter([
   {
     path:'/vardiya',
     element:<ShiftPage/>,
+    errorElement:<></>
+  },
+  {
+    path:'/sefer-olustur',
+    element:<CreateExpedition/>,
     errorElement:<></>
   }
 
