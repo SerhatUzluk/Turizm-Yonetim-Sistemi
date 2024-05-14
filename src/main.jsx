@@ -18,6 +18,8 @@ import TicketShowPage from "./pages/TicketShowPage.jsx";
 import TicketPoint from "./pages/TicketPoint.jsx";
 import ShiftPage from "./pages/ShiftPage.jsx";
 import CreateExpedition from "./components/Expedition/CreateExpedition.jsx";
+import UpdateExpedition from "./components/Expedition/UpdateExpedition copy.jsx";
+import CompanyPage from "./pages/CompanyPage.jsx";
 
 {
   /*Route oluşturmak için router oluşturuldu.*/
@@ -87,6 +89,16 @@ const router = createBrowserRouter([
   {
     path:'/sefer-olustur',
     element:<CreateExpedition/>,
+    errorElement:<></>
+  },
+  {
+    path:'/sefer-guncelle',
+    element:<UpdateExpedition/>,
+    errorElement:<></>
+  },
+  {
+    path:'/firma',
+    element:<CompanyPage/>,
     errorElement:<></>
   }
 
