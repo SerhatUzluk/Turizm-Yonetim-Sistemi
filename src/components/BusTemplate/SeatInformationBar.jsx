@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Style/SeatInformationBarStyle.css'
-function SeatInformationBar() {  
+function SeatInformationBar({onRemove}) {  
   return (
     <>
         <div className="seatInformation font-bold font-gemunu">
@@ -32,8 +32,9 @@ function SeatInformationBar() {
           <div className="back"></div>
         </div>
         <p>Boş Koltuk</p>
+        
         </div>
-
+      
 
       </div>
 

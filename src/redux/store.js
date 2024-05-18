@@ -5,13 +5,15 @@ import { expeditionReducer } from './slices/ExpeditionSlice'
 import { campaignReducer } from './slices/CampaignSlice'
 import { loginReducer } from './slices/LoginSlice'
 import { genderButtonReducer } from './slices/GenderButtonSlice'
+import { vehicleSlice } from './slices/VehiclesSlice.js'
 export const store = configureStore({
   reducer: {
     sideBar: sideBarReducer,
     expedition: expeditionReducer,
     campaignDetail: campaignReducer, 
     login: loginReducer,
-    genderButton: genderButtonReducer
+    genderButton: genderButtonReducer,
+    vehicles:vehicleSlice
   },
 })
 

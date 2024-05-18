@@ -4,7 +4,7 @@ import SeatInformationBar from "./SeatInformationBar";
 import { useDispatch, useSelector } from "react-redux";
 import { isOpen } from "../../redux/slices/GenderButtonSlice";
 import GenderButton from "./GenderButton";
-function BusTemplateType3() {
+function BusTemplateType3({onRemove}) {
   const { Open } = useSelector((state) => state.genderButton);
   const [seatNumber, setSeatNumber] = useState(null);
   const dispatch = useDispatch();
@@ -691,8 +691,17 @@ function BusTemplateType3() {
             </div>
           </div>
         </div>
-        <SeatInformationBar />
-        <GenderButton Open={Open}/>
+        <div className="flex justify-center items-center">
+          <button
+            onClick={onRemove}
+            className="w-20 h-10 bg-red-700 rounded-xl text-white"
+          >
+            Sil
+          </button>
+          <SeatInformationBar />
+
+          <GenderButton Open={Open} />
+        </div>
       </div>
     </>
   );
