@@ -17,8 +17,7 @@ function Brands() {
   
   const goToPage = (pageNumber) => {
     if (pageNumber <= totalPages && pageNumber >= 1)
-    setCurrentPage(pageNumber);    
-  console.log(currentPage);        
+    setCurrentPage(pageNumber);          
   };
 
   return (

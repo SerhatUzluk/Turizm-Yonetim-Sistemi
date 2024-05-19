@@ -17,7 +17,7 @@ export default {
         'darkBlue': '#0F1035',
         'yellow': '#fcba03',
         'pink':'#a8077d',    
-        
+        'red': '#fa342d',
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',
         'facebook':'#1877F2',
