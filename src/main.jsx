@@ -23,6 +23,9 @@ import CompanyPage from "./pages/CompanyPage.jsx";
 import VehiclesPages from "./pages/VehiclesPages.jsx";
 import SaleCancellation from "./pages/SalesDepartment/SaleCancellation.jsx"
 import CompanyInformation from "./pages/Admin/CompanyInformation.jsx";
+
+import AdminPage from "./pages/Admin/AdminPage.jsx";
+
 {
   /*Route oluşturmak için router oluşturuldu.*/
 }
@@ -116,6 +119,11 @@ const router = createBrowserRouter([
   {
     path:"/firma-bilgisi",
     element:<CompanyInformation/>,
+    errorElement:<></>    
+  },
+  {
+  path:"/admin-page",
+    element:<AdminPage/>,
     errorElement:<></>
   }
 
