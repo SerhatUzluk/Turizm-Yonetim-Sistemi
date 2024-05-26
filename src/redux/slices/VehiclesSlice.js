@@ -14,7 +14,7 @@ const vehiclesSlice = createSlice({
         },
         removeVehicle:(state,action)=>{
             state.vehicles = state.vehicles.filter((_,index) => index !== action.payload);
-        },
+        }
     },
 });
 

@@ -13,16 +13,27 @@ const vehicleMap = {
 
 const VehiclesPages = () => {
   const [selectedVehicles, setSelectedVehicles] = useState("bus1");
+  const [plate, setPlate] = useState("");
   const vehicles = useSelector((state) => state.vehicles.vehicles);
+
+
   const dispatch = useDispatch();
 
   const handleAddVehicle = () => {
-    dispatch(addVehicle(selectedVehicles));
+    if (plate) {
+      const newVehicle = { type: selectedVehicles, plate };
+      dispatch(addVehicle(newVehicle));
+      setPlate(""); // plaka eklendikten sonra input'u temizleyin
+    } else {
+      alert("Lütfen bir plaka giriniz");
+    }
   };
 
   const handleRemoveVehicle = (index) => {
     dispatch(removeVehicle(index));
   };
+
+  
   return (
     <div className="flex justify-center ">
       <div className="w-96 h-96 border-solid border-2 p-5 m-10 rounded-lg bg-blue text-white ">
@@ -45,29 +56,42 @@ const VehiclesPages = () => {
           </button>
         </div>
 
+        <div className=" h-20 border-solid border rounded-lg bg-lightBlue mx-4 flex items-center justify-center">
+        <input
+            id="plaka"
+            name="plaka"
+            type="text"
+            autoComplete="plaka"
+            required
+            value={plate}
+            onChange={(e) => setPlate(e.target.value)} // onChange ekleyin
+            placeholder="Lütfen buraya plaka giriniz"
+            className="block w-52 rounded-md border py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+          />
+        </div>
+
         <div className="flex items-center justify-center pt-5 text-xl">
           <p>
-            Lütfen eklemek istediğiniz araç tipini seçip ekle butonuna
-            tıklayınız.
+            Lütfen eklemek istediğiniz araç tipini seçip, plaka kısmını
+            ekleyiniz.
           </p>
         </div>
       </div>
 
       <div className="flex-col border-solid border-2 p-10 m-10 w-full bg-light rounded-lg">
-  <div className="flex flex-col justify-center items-center space-y-20">
-    {vehicles.map((comp, index) => {
-      const Vehicle = vehicleMap[comp];
-      return (
-        <Vehicle
-          key={index}
-          onRemove={() => handleRemoveVehicle(index)}
-        />
-      );
-    })}
-  </div>
-</div>
-
-
+        <div className="flex flex-col justify-center items-center space-y-20">
+        {vehicles.map((comp, index) => {
+            const Vehicle = vehicleMap[comp.type];
+            return (
+              <Vehicle
+                key={index}
+                plate={comp.plate} // plate bilgisini bileşene iletin
+                onRemove={() => handleRemoveVehicle(index)}
+              />
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };
