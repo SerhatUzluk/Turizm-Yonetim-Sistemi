@@ -22,6 +22,9 @@ import UpdateExpedition from "./components/Expedition/UpdateExpedition copy.jsx"
 import CompanyPage from "./pages/CompanyPage.jsx";
 import VehiclesPages from "./pages/VehiclesPages.jsx";
 import SaleCancellation from "./pages/SalesDepartment/SaleCancellation.jsx"
+import AddPersonel from "./pages/Admin/Personel/AddPersonel.jsx";
+import PersonelTable from "./pages/Admin/Personel/PersonelTable.jsx";
+import Updateersonel from "./pages/Admin/Personel/UpdatePersonel.jsx";
 {
   /*Route oluşturmak için router oluşturuldu.*/
 }
@@ -110,6 +113,21 @@ const router = createBrowserRouter([
   {
     path:"/satis-iptal",
     element:<SaleCancellation/>,
+    errorElement:<></>
+  },
+  {
+    path:"/personel-ekle",
+    element:<AddPersonel/>,
+    errorElement:<></>
+  },
+  {
+    path:"/personel-düzenle",
+    element:<Updateersonel/>,
+    errorElement:<></>
+  },
+  {
+    path:"/personels",
+    element:<PersonelTable/>,
     errorElement:<></>
   }
 

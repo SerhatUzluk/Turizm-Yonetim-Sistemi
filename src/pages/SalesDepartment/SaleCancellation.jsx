@@ -41,7 +41,7 @@ function SaleCancellation() {
     <>
       <div className="bg-lightBlue h-[900px] relative">
         <div className="font-gemunu mt-4">
-          <div className="justify-center flex mb-4 mt-4 relative h-[120px] relative">
+          <div className="justify-center flex mb-4 mt-4 relative h-[120px]">
             <div className="mt-16 flex">
               <label htmlFor="" className="mt-3 mr-2 text-xl font-semibold ">
                 Bilet ID:
