@@ -26,7 +26,11 @@ export default {
         'google':'#EA4335',
         'visa':'#0080ff',
         'Mastercard':'#f9373c',
-        'telegram':'#007FFF'
+        'telegram':'#007FFF',
+        'adminDark':'#000000',
+        'adminDarkBlue':'#0B60B0',
+        'adminBlue':'#40A2D8',
+        'adminLight':'#F0EDCF',
       },
     },
   },
