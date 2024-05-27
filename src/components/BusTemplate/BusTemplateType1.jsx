@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { isOpen } from "../../redux/slices/GenderButtonSlice";
 import GenderButton from "./GenderButton";
 
-function BusTemplateType1({ onRemove }) {
+function BusTemplateType1({ onRemove,plate }) {
   const { Open } = useSelector((state) => state.genderButton);
   const [seatNumber, setSeatNumber] = useState(null);
   const dispatch = useDispatch();
@@ -635,12 +635,14 @@ function BusTemplateType1({ onRemove }) {
           </div>
         </div>
         <div className="flex justify-center items-center">
+        <p className="font-bold mx-2 border-black border-2 bg-blue text-white rounded-lg p-2">Plaka: {plate}</p>
           <button
             onClick={onRemove}
-            className="w-20 h-10 bg-red-700 rounded-xl text-white"
+            className="w-10 h-10 bg-red-700 rounded-xl text-white bg-red mr-5"
           >
             Sil
           </button>
+          
           <SeatInformationBar />
 
           <GenderButton Open={Open} />
