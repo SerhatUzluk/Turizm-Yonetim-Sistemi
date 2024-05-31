@@ -16,7 +16,7 @@ import TicketPage from "./pages/TicketPage.jsx";
 import PaymentPage from "./pages/PaymentPage.jsx";
 import TicketShowPage from "./pages/TicketShowPage.jsx";
 import TicketPoint from "./pages/TicketPoint.jsx";
-import ShiftPage from "./pages/ShiftPage.jsx";
+import ShiftPage from "./pages/Planning/ShiftPage.jsx";
 import CreateExpedition from "./components/Expedition/CreateExpedition.jsx";
 import UpdateExpedition from "./components/Expedition/UpdateExpedition copy.jsx";
 import CompanyPage from "./pages/CompanyPage.jsx";
@@ -25,6 +25,8 @@ import SaleCancellation from "./pages/SalesDepartment/SaleCancellation.jsx"
 import AddPersonel from "./pages/Admin/Personel/AddPersonel.jsx";
 import PersonelTable from "./pages/Admin/Personel/PersonelTable.jsx";
 import Updateersonel from "./pages/Admin/Personel/UpdatePersonel.jsx";
+import Statistics from "./pages/Admin/Statistics.jsx";
+import CompanyInformation from "./pages/Admin/CompanyInformation.jsx";
 {
   /*Route oluşturmak için router oluşturuldu.*/
 }
@@ -129,7 +131,18 @@ const router = createBrowserRouter([
     path:"/personels",
     element:<PersonelTable/>,
     errorElement:<></>
+  },
+  {
+    path:'/istatistikler',
+    element:<Statistics/>,
+    errorElement:<></>
+  },
+  {
+    path:'/firma-bilgisi',
+    element:<CompanyInformation/>,
+    errorElement:<></>
   }
+
 
 ]);
 

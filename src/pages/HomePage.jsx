@@ -13,7 +13,7 @@ const HomePage = () => {
       <div className="flex justify-center">
         <div className="max-w-6xl">
           <div className="flex flex-wrap justify-start items-center mt-12">
-            {Information.map((info) => (
+            {Information.slice(0,4).map((info) => (
               <BrandCard key={info.name} item={info}></BrandCard>
             ))}
             <div className="bg-lightBlue font-gemunu mt-4 flex justify-center w-full">

@@ -18,6 +18,7 @@ export default {
         'yellow': '#fcba03',
         'pink':'#a8077d',    
         'red': '#fa342d',
+        'green': '#26a69a',
         'instagram':'#E1306C',
         'twitter':'#1DA1F2',
         'facebook':'#1877F2',
