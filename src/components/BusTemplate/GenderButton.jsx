@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { FcBusinesswoman, FcBusinessman } from "react-icons/fc";
+import { IoCloseSharp } from "react-icons/io5";
+import { close } from "../../redux/slices/GenderButtonSlice";
 
 function GenderButton({ Open }) {
-  const [gender, setGender] = useState("cinsiyet");
+  const [gender, setGender] = useState("Cinsiyet");
   const [showInput, setShowInput] = useState(false);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     if (!Open) {
       setGender("Cinsiyet");
@@ -13,10 +15,11 @@ function GenderButton({ Open }) {
     }
   }, [Open]);
 
+
   return (
     <>
       {Open && (
-        <div className="flex mt-4 ml-2">
+        <div className="flex mt-4 relative mb-4 h-[50px]">
           <div className="text-2xl bg-gray-400 w-[115px] h-[50px] pl-2 pr-2 mt-2 ml-4 text-white rounded">
             <button
               className="bg-blue p-2 mr-1 rounded mt-1 focus:scale-105 focus:bg-lightBlue ml-1 focus:border"
@@ -35,7 +38,8 @@ function GenderButton({ Open }) {
               }}
             >
               <FcBusinesswoman />
-            </button>
+            </button>            
+
           </div>
           <div className="font-semibold bg-gray-400 h-[50px] p-1 font-gemunu text-lg rounded mt-2 text-center ml-1 w-[65px]">
             <p className="mt-2">{gender}</p>
@@ -45,7 +49,7 @@ function GenderButton({ Open }) {
             <div className="ml-5 flex flex-col justify-center items-center">
               
              
-              <p className="text-xs">Lütfen Tc giriniz</p>
+              <p className="text-xs font-semibold">TC. Kimlik No Giriniz</p>
               <input
                 id="tc"
                 name="tc"
@@ -56,7 +60,7 @@ function GenderButton({ Open }) {
               
               />
             
-                <button className="bg-blue text-white rounded-md text-sm w-24 mt-1">Seç</button>
+                <button className="bg-blue text-white rounded-md text-sm w-full mt-1">Seç</button>
             
               
             </div>

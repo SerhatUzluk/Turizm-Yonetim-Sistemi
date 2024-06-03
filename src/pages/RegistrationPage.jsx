@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import logo from "../images/smr-logo-dark.png";
+import React, { useState } from "react";
+import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
+import logo from "../images/smr-logo-dark.png";
 import Navbar from "../layouts/Navbar.jsx";
 import { PasswordStrengthMeter } from "../components/PasswordStrengthMeter.jsx";
 
@@ -9,6 +9,13 @@ export default function RegistrationPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+  });
+
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -17,16 +24,36 @@ export default function RegistrationPage() {
     setConfirmPassword(e.target.value);
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       setPasswordError("Şifreler uyuşmuyor!");
       return false;
     } else {
       setPasswordError("");
-      return true;
     }
+
+    {
+      /* post işleminde kullanılacak veri */
+    }
+    const sanitizedData = {
+      name: DOMPurify.sanitize(formData.name),
+      lastName: DOMPurify.sanitize(formData.lastName),
+      email: DOMPurify.sanitize(formData.email),
+      phoneNumber: DOMPurify.sanitize(formData.phoneNumber),
+      password: DOMPurify.sanitize(password),
+    };
+
+    return true;
   };
 
   return (
@@ -68,6 +95,8 @@ export default function RegistrationPage() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Adınız..."
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -87,6 +116,8 @@ export default function RegistrationPage() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Soyadınız..."
+                  value={formData.lastName}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -106,6 +137,8 @@ export default function RegistrationPage() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="E-Mail Adress..."
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -126,6 +159,8 @@ export default function RegistrationPage() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Telefon Numaranız..."
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -148,7 +183,7 @@ export default function RegistrationPage() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Şifre..."
-                  onBlur={handlePasswordChange}
+                  onChange={handlePasswordChange}
                 />
                 <PasswordStrengthMeter password={password} />
               </div>
@@ -157,7 +192,7 @@ export default function RegistrationPage() {
             <div>
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="password"
+                  htmlFor="confirmPassword"
                   className="block text-lg leading-6 text-gray-900 font-bold"
                 >
                   Şifrenizi Doğrulayın
@@ -174,7 +209,10 @@ export default function RegistrationPage() {
                   placeholder="Şifreyi doğrula..."
                   onBlur={handleConfirmPasswordChange}
                 />
-                <div id="passwordError" className="font-semibold text-red-500 bordered text-right">
+                <div
+                  id="passwordError"
+                  className="font-semibold text-red-500 bordered text-right"
+                >
                   {passwordError}
                 </div>
               </div>

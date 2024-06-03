@@ -3,35 +3,35 @@ import '../Style/SeatInformationBarStyle.css'
 function SeatInformationBar({onRemove}) {  
   return (
     <>
-        <div className="seatInformation font-bold font-gemunu">
-        <div>
+        <div className="flex font-bold font-gemunu border-4 border-gray-400 rounded divide-x mt-2">
+        <div className='w-[80px]'>
         <div className="seatPart info">
-          <div className="blueSeat bg-blue"></div>
+          <div className="blueSeat bg-blue ml-4"></div>
           <div className="back"></div>
         </div>
-        <p>Dolu Koltuk - Erkek</p>
+        <p className='ml-1'>Erkek - Dolu</p>
         </div>
-        <div>
+        <div className='w-[80px]'>
         <div className="seatPart info">
-          <div className="pinkSeat bg-pink"></div>
+          <div className="pinkSeat bg-pink ml-4"></div>
           <div className="back"></div>
           </div>
-          <p>Dolu Koltuk - Kadın</p>
+          <p className='ml-1'>Kadın - Dolu</p>
 
         </div>
-        <div>
+        <div className='w-[80px]'>
         <div className="seatPart info">
-          <div className="yellowSeat bg-yellow"></div>
+          <div className="yellowSeat bg-yellow ml-4"></div>
           <div className="back"></div>
         </div>
-        <p>Seçilen Koltuk</p>
+        <p className='ml-4'>Seçilen</p>
         </div>
-        <div className="">
+        <div className="w-[80px]">
         <div className="seatPart info">
-          <div className="seat"></div>
+          <div className="seat ml-4"></div>
           <div className="back"></div>
         </div>
-        <p>Boş Koltuk</p>
+        <p className='ml-6'>Boş</p>
         
         </div>
       

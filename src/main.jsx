@@ -27,6 +27,7 @@ import PersonelTable from "./pages/Admin/Personel/PersonelTable.jsx";
 import Updateersonel from "./pages/Admin/Personel/UpdatePersonel.jsx";
 import Statistics from "./pages/Admin/Statistics.jsx";
 import CompanyInformation from "./pages/Admin/CompanyInformation.jsx";
+import Brands from "./pages/Brands.jsx";
 {
   /*Route oluşturmak için router oluşturuldu.*/
 }
@@ -140,6 +141,11 @@ const router = createBrowserRouter([
   {
     path:'/firma-bilgisi',
     element:<CompanyInformation/>,
+    errorElement:<></>
+  },
+  {
+    path:'/markalar',
+    element:<Brands/>,
     errorElement:<></>
   }
 
