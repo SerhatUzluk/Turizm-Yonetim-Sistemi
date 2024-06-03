@@ -15,8 +15,7 @@ import { TiPlus } from "react-icons/ti";
 import { TiMinus } from "react-icons/ti";
 import { TiEquals } from "react-icons/ti";
 
-function Statistics() {
-  const [isResponsive, setIsResponsive] = React.useState(false);
+function Statistics() {  
   const [cost, setCost] = React.useState({
     January: 0,
     February: 0,
@@ -55,61 +54,8 @@ function Statistics() {
       maximumSignificantDigits: 3,
     }).format(number);
   };
-
-  const getMonthKey = (month) => {
-    switch (month) {
-      case "Ocak":
-        return "January";
-      case "Şubat":
-        return "February";
-      case "Mart":
-        return "March";
-      case "Nisan":
-        return "April";
-      case "Mayıs":
-        return "May";
-      case "Haziran":
-        return "June";
-      case "Temmuz":
-        return "July";
-      case "Ağustos":
-        return "August";
-      case "Eylül":
-        return "September";
-      case "Ekim":
-        return "October";
-      case "Kasım":
-        return "November";
-      case "Aralık":
-        return "December";
-      default:
-        return null;
-    }
-  };
-
-  const handleClick = (event) => {
-    const { index } = event;
-    const monthNames = [
-      "Ocak",
-      "Şubat",
-      "Mart",
-      "Nisan",
-      "Mayıs",
-      "Haziran",
-      "Temmuz",
-      "Ağustos",
-      "Eylül",
-      "Ekim",
-      "Kasım",
-      "Aralık",
-    ];
-    const clickedMonth = monthNames[index];
-    const revenue = revenueValues / 1000000;
-    const costValue = cost[clickedMonth] / 1000000;
-    const netIncome = revenue - costValue;
-
-    console.log(index);
-  };
+  
+  
 
   const Container = ResponsiveChartContainer;
 
@@ -121,7 +67,7 @@ function Statistics() {
             <h6 className="text-4xl font-bold">İstatistikler</h6>
           </div>
         </div>
-        <div className="flex justify-center font-bold text-2xl bg-adminBlue mt-10 h-16 items-center">
+        <div className="flex justify-center font-bold text-2xl bg-adminBlue mt-10 h-16 items-center mx-4">
           <h6>Aylara Göre Gelir Verileri</h6>
         </div>
         <div className="mt-14 mx-4">
@@ -199,8 +145,7 @@ function Statistics() {
                       "Aralık",
                     ],
                     scaleType: "band",
-                    id: "x-axis-id",
-                    onClick: handleClick,
+                    id: "x-axis-id",                    
                   },
                 ]}
                 yAxis={[
@@ -334,7 +279,7 @@ function Statistics() {
           </div>
         </div>
 
-        <div className="flex justify-center font-bold text-2xl bg-adminBlue mt-10 h-16 items-center">
+        <div className="flex justify-center font-bold text-2xl bg-adminBlue mt-10 h-16 items-center mx-4">
           <h6>Yolcu Memnuniyet Değerleri</h6>
         </div>
         <div className="flex justify-center mt-12 mb-16">

@@ -1,24 +1,39 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import "../Style/BusType1Style.css";
 import SeatInformationBar from "./SeatInformationBar";
 import { useDispatch, useSelector } from "react-redux";
 import { isOpen } from "../../redux/slices/GenderButtonSlice";
 import GenderButton from "./GenderButton";
+import { close } from "../../redux/slices/GenderButtonSlice";
 
-function BusTemplateType1({ onRemove,plate }) {
-  const { Open } = useSelector((state) => state.genderButton);
+function BusTemplateType1({ onRemove, plate }) {
+  const { Open } = useSelector((state) => state.genderButton);  
   const [seatNumber, setSeatNumber] = useState(null);
   const dispatch = useDispatch();
   function handleButtonClick(buttonValue) {
-    setSeatNumber(buttonValue);
+    if (seatNumber === buttonValue) {
+      setSeatNumber(null);
+    } else {
+      setSeatNumber(buttonValue);
+    }
   }
+
   const openFunc = () => {
-    dispatch(isOpen());
+    if (seatNumber === null) {
+      dispatch(close());
+    } else {
+      dispatch(isOpen());
+      console.log(Open);
+    }
   };
+
+  useEffect(() => {
+    openFunc();
+  }, [seatNumber]);
 
   return (
     <>
-      <div className="block">
+      <div className="block relative">
         <div className="busLayout font-gemunu">
           <div className="driverPart">
             <svg width="60" height="60" viewBox="0 0 100 100" className="">
@@ -89,10 +104,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 2 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
-                        handleButtonClick(4);
-                        openFunc();
+                        handleButtonClick(2);
                       }
                     }}
                   >
@@ -103,10 +120,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 3 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(3);
-                        openFunc();
                       }
                     }}
                   >
@@ -119,10 +138,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 5 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(5);
-                        openFunc();
                       }
                     }}
                   >
@@ -133,10 +154,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 6 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(6);
-                        openFunc();
                       }
                     }}
                   >
@@ -149,10 +172,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 8 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(8);
-                        openFunc();
                       }
                     }}
                   >
@@ -163,10 +188,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 9 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(9);
-                        openFunc();
                       }
                     }}
                   >
@@ -179,10 +206,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 11 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(11);
-                        openFunc();
                       }
                     }}
                   >
@@ -193,10 +222,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 12 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(12);
-                        openFunc();
                       }
                     }}
                   >
@@ -209,10 +240,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 14 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(14);
-                        openFunc();
                       }
                     }}
                   >
@@ -223,10 +256,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 15 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(15);
-                        openFunc();
                       }
                     }}
                   >
@@ -239,10 +274,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 17 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(17);
-                        openFunc();
                       }
                     }}
                   >
@@ -253,10 +290,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 18 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(18);
-                        openFunc();
                       }
                     }}
                   >
@@ -270,10 +309,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 20 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(20);
-                        openFunc();
                       }
                     }}
                   >
@@ -284,10 +325,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 21 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(21);
-                        openFunc();
                       }
                     }}
                   >
@@ -300,10 +343,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 23 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(23);
-                        openFunc();
                       }
                     }}
                   >
@@ -314,10 +359,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 24 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(24);
-                        openFunc();
                       }
                     }}
                   >
@@ -330,10 +377,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 26 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(26);
-                        openFunc();
                       }
                     }}
                   >
@@ -344,10 +393,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 27 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(27);
-                        openFunc();
                       }
                     }}
                   >
@@ -360,10 +411,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 29 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(29);
-                        openFunc();
                       }
                     }}
                   >
@@ -374,10 +427,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 30 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(30);
-                        openFunc();
                       }
                     }}
                   >
@@ -390,10 +445,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 32 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(32);
-                        openFunc();
                       }
                     }}
                   >
@@ -404,10 +461,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 33 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(33);
-                        openFunc();
                       }
                     }}
                   >
@@ -420,10 +479,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 35 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(35);
-                        openFunc();
                       }
                     }}
                   >
@@ -434,10 +495,12 @@ function BusTemplateType1({ onRemove,plate }) {
                 <div className="seatPart">
                   <button
                     className="seat"
+                    style={{
+                      backgroundColor: seatNumber === 36 ? "#fcba03" : "white",
+                    }}
                     onClick={() => {
                       {
                         handleButtonClick(36);
-                        openFunc();
                       }
                     }}
                   >
@@ -451,10 +514,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 1 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(1);
-                      openFunc();
                     }
                   }}
                 >
@@ -465,10 +530,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 4 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(4);
-                      openFunc();
                     }
                   }}
                 >
@@ -480,10 +547,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 7 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(7);
-                      openFunc();
                     }
                   }}
                 >
@@ -494,10 +563,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 10 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(10);
-                      openFunc();
                     }
                   }}
                 >
@@ -508,10 +579,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 13 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(13);
-                      openFunc();
                     }
                   }}
                 >
@@ -522,10 +595,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 16 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(16);
-                      openFunc();
                     }
                   }}
                 >
@@ -536,10 +611,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 19 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(19);
-                      openFunc();
                     }
                   }}
                 >
@@ -550,10 +627,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 22 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(22);
-                      openFunc();
                     }
                   }}
                 >
@@ -564,10 +643,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 25 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(25);
-                      openFunc();
                     }
                   }}
                 >
@@ -578,10 +659,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 28 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(28);
-                      openFunc();
                     }
                   }}
                 >
@@ -592,10 +675,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 31 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(31);
-                      openFunc();
                     }
                   }}
                 >
@@ -606,10 +691,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 34 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(34);
-                      openFunc();
                     }
                   }}
                 >
@@ -620,10 +707,12 @@ function BusTemplateType1({ onRemove,plate }) {
               <div className="seatPart">
                 <button
                   className="seat"
+                  style={{
+                    backgroundColor: seatNumber === 37 ? "#fcba03" : "white",
+                  }}
                   onClick={() => {
                     {
                       handleButtonClick(37);
-                      openFunc();
                     }
                   }}
                 >
@@ -634,18 +723,22 @@ function BusTemplateType1({ onRemove,plate }) {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center">
-        <p className="font-bold mx-2 border-black border-2 bg-blue text-white rounded-lg p-2">Plaka: {plate}</p>
+        <div className="flex items-center">
+          <p className="font-bold mx-2 border-black border-2 bg-blue text-white rounded-lg p-2">
+            Plaka: {plate}
+          </p>
           <button
             onClick={onRemove}
             className="w-10 h-10 bg-red-700 rounded-xl text-white bg-red mr-5"
           >
             Sil
           </button>
-          
+
           <SeatInformationBar />
 
-          <GenderButton Open={Open} />
+          <div className="">
+            <GenderButton Open={Open} />
+          </div>
         </div>
       </div>
     </>

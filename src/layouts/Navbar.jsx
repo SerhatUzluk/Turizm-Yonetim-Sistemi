@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import icon from "../images/smr-logo.png";
@@ -6,11 +6,6 @@ import { RiMenu2Fill } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { logout } from "../redux/slices/LoginSlice";
 
-const navigation = [
-  { name: "Anasayfa", href: "/", current: true },
-  { name: "Hakkımızda", href: "/hakkimizda", current: false },
-  { name: "iletişim", href: "/iletisim", current: false },
-];
 
 const transactions = [
   { name: "Kayıt Ol", href: "#" },
@@ -28,6 +23,41 @@ const logoutFunc = () => {
 
 function Navbar() {
   const { isLogin } = useSelector((state) => state.login);
+  const [isCurrent, setIsCurrent] = useState("Anasayfa");
+  
+  useEffect(() => {
+    const savedCurrent = localStorage.getItem("isCurrent");
+    if (savedCurrent) {
+      setIsCurrent(savedCurrent);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("isCurrent", isCurrent);
+  }, [isCurrent]);
+  
+  const changeCurrentItem = (value) => {
+    setIsCurrent(value);
+  }
+
+  const navigation = [
+    {
+      name: "Anasayfa",
+      href: "/",
+      current: isCurrent === "Anasayfa" ? true : false,
+    },
+    {
+      name: "Hakkımızda",
+      href: "/hakkimizda",
+      current: isCurrent === "Hakkımızda" ? true : false,
+    },
+    {
+      name: "İletişim",
+      href: "/iletisim",
+      current: isCurrent === "İletişim" ? true : false,
+    },
+  ];
+  console.log(isCurrent);
   return (
     <Disclosure as="nav" className="bg-darkBlue font-gemunu">
       {() => (
@@ -55,11 +85,12 @@ function Navbar() {
                       <a
                         key={item.name}
                         href={item.href}
+                        onClick={() => changeCurrentItem(item.name)}
                         className={classNames(
                           item.current
                             ? "bg-lightBlue text-darkBlue"
-                            : "text-gray-300 hover:bg-blue hover:text-darkBlue",
-                          "rounded-md px-3 py-2 text-lg font-medium transition duration-300 hover:scale-105 hover:-translate-x-2 "
+                            : "text-gray-300 hover:bg-light hover:text-darkBlue",
+                          "rounded-sm px-3 py-2 text-lg font-medium transition duration-300 hover:scale-105 hover:-translate-x-2 "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -131,7 +162,7 @@ function Navbar() {
                     className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
                   >
                     <div>
-                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
                         İşlemler
                       </Menu.Button>
                     </div>
@@ -145,7 +176,7 @@ function Navbar() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-sm bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold">
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
@@ -235,7 +266,7 @@ function Navbar() {
                     className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
                   >
                     <div>
-                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
                         İşlemler
                       </Menu.Button>
                     </div>
@@ -249,12 +280,12 @@ function Navbar() {
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                     >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold">
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-sm bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none font-semibold">
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="/"
+                                href="/giris"
                                 className={classNames(
                                   active
                                     ? "bg-gray-100 text-gray-900"

@@ -24,14 +24,14 @@ function Brands() {
     <>
     <div><h3 className="text-4xl font-bold text-center mt-16 mb-16 font-gemunu">Turizm Firmaları</h3></div>
     { ( currentData.map((item, index) =>
-    <div key={index} className="flex items-center border mb-2 font-gemunu ">
+    <div key={index} className="flex items-center border mb-2 font-gemunu">
         <div className="">
            <Link><img src={item.logo} alt="" className="border w-[400px] h-[400px] mb-2 mt-2 ml-2 hover:scale-105 duration-300 transition rounded" /></Link>
         </div>
         <div className=" ml-6  ">
             <h6 className="mt-4 font-bold text-2xl">{item.name}</h6>
             <p className="text-lg w-[250px] h-[300px] mt-6">{item.description}</p>
-            <button className="bg-lightBlue p-3 rounded text-lg font-semibold ml-[250px] hover:bg-darkBlue hover:text-white duration-300 transition mb-2">Firma Sayfasına Gitmek İçin Tıklayın</button>
+            <button className="bg-darkBlue text-white p-3 rounded text-lg font-semibold ml-[250px] hover:bg-lightBlue hover:text-black duration-300 transition mb-2">Firma Sayfasına Gitmek İçin Tıklayın</button>
         </div>
     </div>))
 }

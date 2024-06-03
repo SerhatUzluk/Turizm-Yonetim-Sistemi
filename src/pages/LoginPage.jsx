@@ -1,18 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../images/smr-logo-dark.png'
 import { Link } from 'react-router-dom'
-
+import DOMPurify from 'dompurify'
 export default function LoginPage() {
+
+  const [loginData, setLoginData] = useState({
+    eMail: "",
+    password: ""
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...loginData,
+      [name]: value,
+    });
+  };
+{/* post işleminde kullanılacak veri */}
+  const sanitizedData = {
+    eMail: DOMPurify.sanitize(loginData.eMail),
+    password: DOMPurify.sanitize(loginData.password)
+  };
+
     return (
       <>
-        {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
+        
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 font-gemunu">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Link to="/">
@@ -41,6 +53,8 @@ export default function LoginPage() {
                     autoComplete="email"
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={FormData.eMail}
+                    onChange={handleChange}
                   />
                 </div>
               </div>
@@ -64,6 +78,8 @@ export default function LoginPage() {
                     autoComplete="current-password"
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    value={FormData.password}
+                    onChange={handleChange}
                   />
                 </div>
               </div>

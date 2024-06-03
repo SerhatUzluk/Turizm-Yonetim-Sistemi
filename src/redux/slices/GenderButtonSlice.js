@@ -9,11 +9,14 @@ const GenderButtonSlice = createSlice({
     initialState,
     reducers:{
         isOpen: (state, actions) => {
-            state.Open = !state.Open
+            state.Open = true
+        },
+        close: (state, actions) => {
+            state.Open = false
         }       
     }
 })
 
-export const {isOpen} = GenderButtonSlice.actions;
+export const {isOpen, close} = GenderButtonSlice.actions;
 
 export const genderButtonReducer = GenderButtonSlice.reducer;

@@ -92,7 +92,7 @@ const TableList = () => {
         <div className="block">
           <div className="w-full h-96 border-2 ml-auto mr-auto flex">
             <div className="w-full flex justify-center items-center mt-8">
-              <BusTemplateType2/>
+              <BusTemplateType3/>
             </div>
 
             <div className=" w-1/5 border flex flex-col  justify-between py-2 items-center">
