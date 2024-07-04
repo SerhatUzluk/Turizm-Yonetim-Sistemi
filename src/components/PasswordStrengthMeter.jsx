@@ -1,14 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import zxcvbn from "zxcvbn";
-export const PasswordStrengthMeter = ({ password }) => {
-    const result = zxcvbn(password)
-    const strengthPoint = result.score * 100/4        
+export const PasswordStrengthMeter = () => {
+    const strength = useSelector((state) => state.password.strength);    
+
     const strengthColor = () => ({
-        width: `${strengthPoint}%`,
-        background: strengthPoint > 75 ? 'green' :
-            strengthPoint > 50 ? 'lime' :
-            strengthPoint > 25 ? 'yellow' :
-            strengthPoint > 0 ? 'red' :
+        width: `${strength}%`,
+        background: strength > 75 ? 'green' :
+            strength > 50 ? 'lime' :
+            strength > 25 ? 'yellow' :
+            strength > 0 ? 'red' :
             'gray',
         height: '7px'        
     }

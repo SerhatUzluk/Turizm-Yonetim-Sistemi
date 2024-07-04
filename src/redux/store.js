@@ -6,6 +6,9 @@ import { campaignReducer } from './slices/CampaignSlice'
 import { loginReducer } from './slices/LoginSlice'
 import { genderButtonReducer } from './slices/GenderButtonSlice'
 import { vehicleSlice } from './slices/VehiclesSlice.js'
+import { apiSlice } from '../features/api/apiSlice.js'
+import musteriSlice from '../features/users/musteriSlice.js'
+import { passwordReducer } from './slices/PasswordSlice.js'
 export const store = configureStore({
   reducer: {
     sideBar: sideBarReducer,
@@ -13,7 +16,11 @@ export const store = configureStore({
     campaignDetail: campaignReducer, 
     login: loginReducer,
     genderButton: genderButtonReducer,
-    vehicles:vehicleSlice
+    vehicles:vehicleSlice,
+    password: passwordReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,     
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(apiSlice.middleware)
 })
 
