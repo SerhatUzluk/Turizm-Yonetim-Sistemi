@@ -15,7 +15,7 @@ export const BrandCard = ({item}) => {
           <div className="px-6 py-4 font-gemunu bg-lightBlue">
             <div className="font-bold text-lg mb-2 ">{item.name}</div>
             <Link>
-            <div className="relative bg-darkBlue text-white opacity-0 group-hover:opacity-100 rounded-sm">              
+            <div className="relative bg-darkBlue text-white opacity-0 group-hover:opacity-100 rounded-sm duration-500">              
             <p className="text-Black text-base font-bold ml-3">
               Firmaya gitmek için tıkla
             </p>
