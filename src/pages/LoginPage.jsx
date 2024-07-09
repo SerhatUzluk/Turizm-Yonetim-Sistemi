@@ -2,25 +2,46 @@ import React, { useState } from 'react'
 import logo from '../images/smr-logo-dark.png'
 import { Link } from 'react-router-dom'
 import DOMPurify from 'dompurify'
-export default function LoginPage() {
+import { useLoginMutation } from '../features/api/apiSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { setToken } from '../redux/slices/LoginSlice'
+import { useNavigate } from 'react-router-dom'
+export default function LoginPage() {  
 
   const [loginData, setLoginData] = useState({
-    eMail: "",
+    email: "",
     password: ""
   })
+  
+  const [login] = useLoginMutation()
+
+  const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
+    setLoginData({
       ...loginData,
       [name]: value,
     });
   };
-{/* post işleminde kullanılacak veri */}
   const sanitizedData = {
-    eMail: DOMPurify.sanitize(loginData.eMail),
+    email: DOMPurify.sanitize(loginData.email),
     password: DOMPurify.sanitize(loginData.password)
   };
+
+  const handleSubmit = async (e) => {    
+    e.preventDefault();
+    try{
+      const response = await login(sanitizedData).unwrap();  
+      dispatch(setToken(response.token)); 
+      navigate("/");               
+    }
+    catch(err){
+      console.log("Giriş Başarısız", err);
+    }
+  }
 
     return (
       <>
@@ -40,7 +61,7 @@ export default function LoginPage() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" action="#" method="POST" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="email" className="block text-lg font-bold leading-6 text-gray-900">
                   E-Mail Adres
@@ -53,7 +74,7 @@ export default function LoginPage() {
                     autoComplete="email"
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                    value={FormData.eMail}
+                    value={FormData.email}
                     onChange={handleChange}
                   />
                 </div>

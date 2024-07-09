@@ -9,6 +9,7 @@ import { vehicleSlice } from './slices/VehiclesSlice.js'
 import { apiSlice } from '../features/api/apiSlice.js'
 import musteriSlice from '../features/users/musteriSlice.js'
 import { passwordReducer } from './slices/PasswordSlice.js'
+import persistedReducer from './persistConfig.js'
 export const store = configureStore({
   reducer: {
     sideBar: sideBarReducer,
@@ -19,6 +20,7 @@ export const store = configureStore({
     vehicles:vehicleSlice,
     password: passwordReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,     
+    persistedReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(apiSlice.middleware)

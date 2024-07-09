@@ -3,9 +3,8 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import icon from "../images/smr-logo.png";
 import { RiMenu2Fill } from "react-icons/ri";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/slices/LoginSlice";
-
 
 const transactions = [
   { name: "Kayıt Ol", href: "#" },
@@ -17,14 +16,16 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const logoutFunc = () => {
-  dispatch(logout());
-};
-
 function Navbar() {
-  const { isLogin } = useSelector((state) => state.login);
+  const isLogin = useSelector((state) => state.login.isLogin);
   const [isCurrent, setIsCurrent] = useState("Anasayfa");
-  
+
+  const dispatch = useDispatch();
+
+  const logoutFunc = () => {
+    dispatch(logout());    
+  };
+
   useEffect(() => {
     const savedCurrent = localStorage.getItem("isCurrent");
     if (savedCurrent) {
@@ -35,11 +36,10 @@ function Navbar() {
   useEffect(() => {
     localStorage.setItem("isCurrent", isCurrent);
   }, [isCurrent]);
-  
+
   const changeCurrentItem = (value) => {
     setIsCurrent(value);
-  }
-
+  };
   const navigation = [
     {
       name: "Anasayfa",
@@ -57,7 +57,6 @@ function Navbar() {
       current: isCurrent === "İletişim" ? true : false,
     },
   ];
-  console.log(isCurrent);
   return (
     <Disclosure as="nav" className="bg-darkBlue font-gemunu">
       {() => (
@@ -181,7 +180,7 @@ function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="/giris"
+                                href="/"
                                 onClick={logoutFunc}
                                 className={classNames(
                                   active
@@ -197,7 +196,7 @@ function Navbar() {
                           <Menu.Item>
                             {({ active }) => (
                               <a
-                                href="/kayit"
+                                href="/"
                                 className={classNames(
                                   active
                                     ? "bg-gray-100 text-gray-900"

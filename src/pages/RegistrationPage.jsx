@@ -14,16 +14,15 @@ export default function RegistrationPage() {
   const [formData, setFormData] = useState({
     ad: "",
     soyad: "",
-    mailAdres: "",
-    sifre: "",
-    roleID: 0,
-    telefonNumarasi: "",
+    email: "",
+    password: "",    
+    phoneNumber: "",
     cinsiyet: "",
-    kimlikNo: "",
+    kimlikNo: "",    
   });
   const dispatch = useDispatch();
   const strength = useSelector((state) => state.password.strength);
-  const sifre = useSelector((state) => state.password.passwordValue);
+  const password = useSelector((state) => state.password.passwordValue);
   const [addMusteri, { isLoading, isSuccess, isError, error }] =
     useAddMusteriMutation();
 
@@ -32,7 +31,7 @@ export default function RegistrationPage() {
     dispatch(setPassword(value));
     setFormData((prevFormData) => ({
       ...prevFormData,
-      sifre: value,
+      password: value,
     }));
   };
 
@@ -43,11 +42,11 @@ export default function RegistrationPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "telefonNumarasi") {
+    if (name === "phoneNumber") {
       const numericValue = value.replace(/\D/g, "");
       setFormData({
         ...formData,
-        telefonNumarasi: numericValue,
+        phoneNumber: numericValue,
       });
     } else if (name === "kimlikNo") {
       const numericValue = value.replace(/\D/g, "");
@@ -74,17 +73,16 @@ export default function RegistrationPage() {
   const sanitizedData = {
     ad: DOMPurify.sanitize(formData.ad),
     soyad: DOMPurify.sanitize(formData.soyad),
-    mailAdres: DOMPurify.sanitize(formData.mailAdres),
-    telefonNumarasi: DOMPurify.sanitize(formData.telefonNumarasi),
-    sifre: DOMPurify.sanitize(formData.sifre),
+    email: DOMPurify.sanitize(formData.email),
+    phoneNumber: DOMPurify.sanitize(formData.phoneNumber),
+    password: DOMPurify.sanitize(formData.password),
     cinsiyet: DOMPurify.sanitize(formData.cinsiyet),
-    kimlikNo: DOMPurify.sanitize(formData.kimlikNo),
-    roleID: 0,
+    kimlikNo: DOMPurify.sanitize(formData.kimlikNo),    
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {    
     e.preventDefault();
-    if (sifre !== confirmPassword) {
+    if (password !== confirmPassword) {
       setPasswordError("Şifreler uyuşmuyor!");
       return false;
     } else {
@@ -92,7 +90,7 @@ export default function RegistrationPage() {
       if (
         strength > 50 &&
         formData.kimlikNo.length >= 11 &&
-        formData.telefonNumarasi.length >= 11
+        formData.phoneNumber.length >= 11
       ) {
         try {
           await addMusteri(sanitizedData).unwrap();
@@ -100,10 +98,9 @@ export default function RegistrationPage() {
           setFormData({
             ad: "",
             soyad: "",
-            mailAdres: "",
-            sifre: "",
-            roleID: 0,
-            telefonNumarasi: "",
+            email: "",
+            password: "",            
+            phoneNumber: "",
             cinsiyet: "",
             kimlikNo: "",
           });
@@ -193,13 +190,13 @@ export default function RegistrationPage() {
               <div className="mt-2">
                 <input
                   id="email"
-                  name="mailAdres"
+                  name="email"
                   type="email"
                   autoComplete="email"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="E-Mail Adresi..."
-                  value={formData.mailAdres}
+                  value={formData.email}
                   onChange={handleChange}
                 />
               </div>
@@ -207,30 +204,30 @@ export default function RegistrationPage() {
 
             <div className="relative">
               <label
-                htmlFor="telefonNumarasi"
+                htmlFor="phoneNumber"
                 className="block text-lg leading-6 text-gray-900 font-bold"
               >
                 Telefon Numarası
               </label>
               <div className="mt-2">
                 <input
-                  id="telefonNumarasi"
-                  name="telefonNumarasi"
+                  id="phoneNumber"
+                  name="phoneNumber"
                   type="tel"
                   pattern="[0-9]*"
                   autoComplete="tel"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Telefon Numarası..."
-                  value={formData.telefonNumarasi}
+                  value={formData.phoneNumber}
                   onChange={handleChange}
                   maxLength={11}
                 />
               </div>
               <div
                 className={
-                  formData.telefonNumarasi.length <= 10 &&
-                  formData.telefonNumarasi != ""
+                  formData.phoneNumber.length <= 10 &&
+                  formData.phoneNumber != ""
                     ? "bg-yellow w-[250px] rounded font-semibold right-1 mt-2 absolute duration-300"
                     : "absolute bg-yellow w-[250px] rounded font-semibold right-1 mt-2 opacity-0 duration-300"
                 }
@@ -303,7 +300,7 @@ export default function RegistrationPage() {
             <div className="relative">
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="sifre"
+                  htmlFor="password"
                   className="block text-lg leading-6 text-gray-900 font-bold"
                 >
                   Şifre
@@ -311,21 +308,21 @@ export default function RegistrationPage() {
               </div>
               <div className="mt-2">
                 <input
-                  id="sifre"
-                  name="sifre"
+                  id="password"
+                  name="password"
                   type="password"
                   autoComplete="current-password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   placeholder="Şifre..."
                   onChange={handlePasswordChange}
-                  value={sifre}
+                  value={password}
                 />
                 <PasswordStrengthMeter />
               </div>
               <div
                 className={
-                  strength <= 50 && sifre != ""
+                  strength <= 50 && password != ""
                     ? "bg-yellow w-[210px] rounded font-semibold right-1 mt-2 absolute duration-300"
                     : "absolute bg-yellow w-[210px] rounded font-semibold right-1 mt-2 opacity-0 duration-300"
                 }
