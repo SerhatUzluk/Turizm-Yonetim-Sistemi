@@ -17,10 +17,11 @@ function classNames(...classes) {
 }
 
 function Navbar() {
-  const isLogin = useSelector((state) => state.login.isLogin);
-  const [isCurrent, setIsCurrent] = useState("Anasayfa");
+  const isLogin = useSelector((state) => state.persistedReducer.login.isLogin);
+  const token = useSelector((state) => state.persistedReducer.login.token);
+  const [isCurrent, setIsCurrent] = useState(null);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
 
   const logoutFunc = () => {
     dispatch(logout());    
@@ -179,8 +180,7 @@ function Navbar() {
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="/"
+                              <a                                
                                 onClick={logoutFunc}
                                 className={classNames(
                                   active

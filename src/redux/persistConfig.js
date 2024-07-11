@@ -1,16 +1,16 @@
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
-import { LoginSlice } from "./slices/LoginSlice";
+import {loginReducer} from "./slices/LoginSlice"; 
 
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['login']
+    whitelist: ['login', 'token', 'refreshToken'] 
 };
 
 const rootReducer = combineReducers({
-    login: LoginSlice.reducer
+    login: loginReducer 
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
