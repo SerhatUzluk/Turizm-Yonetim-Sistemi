@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import DOMPurify from 'dompurify'
 import { useLoginMutation } from '../features/api/apiSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import { setToken } from '../redux/slices/LoginSlice'
+import { setToken, setRefreshToken } from '../redux/slices/LoginSlice'
 import { useNavigate } from 'react-router-dom'
 export default function LoginPage() {  
 
@@ -35,7 +35,8 @@ export default function LoginPage() {
     e.preventDefault();
     try{
       const response = await login(sanitizedData).unwrap();  
-      dispatch(setToken(response.token)); 
+      dispatch(setToken(response.accessToken)); 
+      dispatch(setRefreshToken(response.refreshToken))
       navigate("/");               
     }
     catch(err){
