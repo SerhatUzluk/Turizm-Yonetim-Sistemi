@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+import "./assets/images/custom.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RegistrationPage from "./pages/RegistrationPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";

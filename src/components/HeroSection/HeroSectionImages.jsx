@@ -7,7 +7,7 @@ import img5 from "../../assets/images/Illustration5.png";
 
 const HeroSectionImages = () => {
   return (
-    <div className=" h-40 flex w-full justify-evenly">
+    <div className=" h-40 flex w-full justify-evenly main-effect-img">
       <img className=" hover:scale-125 transition-all" src={img1} alt="" />
       <img className=" hover:scale-125 transition-all" src={img2} alt="" />
       <img className=" hover:scale-125 transition-all" src={img3} alt="" />

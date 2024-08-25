@@ -5,14 +5,16 @@ import { Information } from "../BrandInformation.js";
 import { BrandCard } from "../components/BrandCard.jsx";
 import { Link } from "react-router-dom";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import SearchBar from "../components/SearchBar.jsx";
 const HomePage = () => {
   return (
     <div>
+          <SearchBar/>
       <Slider />
       <HeroSection />
-      <div className="flex justify-center">
+      <div className="flex grid-cols-12 brand-card-container">
         <div className="max-w-6xl">
-          <div className="flex flex-wrap justify-start items-center mt-12">
+          <div className="flex flex-wrap justify-center items-center mt-12">
             {Information.slice(0,4).map((info) => (
               <BrandCard key={info.name} item={info}></BrandCard>
             ))}

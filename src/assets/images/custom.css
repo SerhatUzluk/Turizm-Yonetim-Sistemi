@@ -1,0 +1,56 @@
+.brand-card-container{
+    justify-content: center;
+}
+
+@media (max-width: 768px){
+    .main-effect-img{
+        display: none !important;
+    }
+    .map-content{
+        display: none !important;
+    }
+
+    .gap-5 .font-gemunu{
+        font-size: 40px !important;
+    }
+
+    .flex .text-center{
+        width: 90% !important;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .flex-shrink-0 .rounded{
+        display: none;
+    }
+
+    div .inset-0{
+        display: none;
+    }
+    .custom-route-btn{
+        top: 165px;
+        right: 51px;
+    }
+}
+
+
+@media (max-width: 1023.9px) {
+    .custom-route-btn{
+        top: 165px;
+        right: 51px;
+    }
+    .custom-search-btn{
+        width: 100%;
+    }
+}
+
+@media (min-width: 1023.9px){
+    .custom-search-btn{
+        border-radius: 5px 5px 50px 5px !important;
+    }
+    .custom-route-btn{
+        right: 45%;
+        top: 55px;
+    }
+}
