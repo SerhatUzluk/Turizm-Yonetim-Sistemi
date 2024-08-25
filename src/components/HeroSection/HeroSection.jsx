@@ -11,7 +11,7 @@ const HeroSection = () => {
         </div>
 
 
-        <div className='flex items-center w-full h-96 bg-light rounded-3xl'>
+        <div className='main-effect-img flex items-center w-full h-96 bg-light rounded-3xl'>
             <HeroSectionImages />
         </div>
     </div>

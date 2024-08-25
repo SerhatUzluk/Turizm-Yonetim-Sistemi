@@ -46,7 +46,7 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-5 map-content">
               <Maps />
             </div>
           </div>

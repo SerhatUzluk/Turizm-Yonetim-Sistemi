@@ -99,7 +99,7 @@ function Navbar() {
                     ))}
                   </div>
                 </div>
-                <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden sm:hidden mt-2 ml-10 ">
+                <div className="block md:hidden lg:hidden xl:hidden 2xl:hidden sm:hidden mt-2 ">
                   <div className="mt-3">
                     <Menu
                       as="div"
@@ -146,11 +146,11 @@ function Navbar() {
                   </div>
                 </div>
 
-                <div className=" sm:mr-[5px] mt-3 ml-8 sm:ml-0 lg:ml-8">
+                <div className=" sm:mr-[5px] mt-2 ml-3 sm:ml-0 lg:ml-8 md:mt-3">
                   <input
                     type="text"
                     placeholder="Ara..."
-                    className="px-4 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 sm:w-[110px] md:w-[240px] lg:w-[440px]"
+                    className="px-2 py-2 rounded-lg focus:outline-none focus:ring focus:border-blue-300 sm:w-[110px] md:w-[240px] lg:w-[440px]"
                   />
                 </div>
               </div>
@@ -159,7 +159,7 @@ function Navbar() {
                 <div className="mt-3">
                   <Menu
                     as="div"
-                    className="relative inline-block text-left w-[70px] ml-[10px] sm:ml-[20px] sm:w-[80px] mt-2"
+                    className="relative inline-block text-left w-[70px] sm:ml-[20px] sm:w-[80px] mt-4"
                   >
                     <div>
                       <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-lg font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 ">
