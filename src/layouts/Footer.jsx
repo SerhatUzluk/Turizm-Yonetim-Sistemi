@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="flex-grow pt-4">
       <footer className="bg-darkBlue text-light  text-center font-gemunu border-t-2 border-light h-70">
         <div className="container mx-auto py-4">
-          <div className="flex justify-between px-16">
+          <div className="flex justify-around px-16">
             <div className="text-2xl grid grid-cols-3 gap-8 pl-20 mt-5">
               <FaInstagram className="hover:scale-125 text-instagram" />
               <FaTwitter className="hover:scale-125 text-twitter" />
@@ -46,9 +46,9 @@ const Footer = () => {
               </p>
             </div>
 
-            <div className="mt-5 map-content">
+            {/* <div className="mt-5 map-content">
               <Maps />
-            </div>
+            </div> */}
           </div>
         </div>
       </footer>
