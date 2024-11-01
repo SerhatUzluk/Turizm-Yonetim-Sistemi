@@ -54,3 +54,19 @@
         top: 55px;
     }
 }
+
+@media (max-width: 1280px) {
+    .price-bar{
+        width: 100% !important;
+    }
+
+    .price-bar div:first-child{
+        flex-direction: row !important;
+    }
+
+    .onay-btn{
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+}

@@ -4,7 +4,6 @@ import { FaChevronUp } from "react-icons/fa";
 import BusTemplateType3 from '../BusTemplate/BusTemplateType3.jsx'
 import BusTemplateType1 from '../BusTemplate/BusTemplateType1.jsx'
 import BusTemplateType2 from '../BusTemplate/BusTemplateType2.jsx'
-import Campaigns from '../Campaigns/Campaigns.jsx'
 import { useDispatch, useSelector } from "react-redux";
 import { modalTrue } from "../../redux/slices/ExpeditionSlice.js";
 import ExpeditionDetail from "./ExpeditionDetail.jsx";
@@ -90,15 +89,15 @@ const TableList = () => {
             </tr>
           </div>
         <div className="block">
-          <div className="w-full h-96 border-2 ml-auto mr-auto flex">
-            <div className="w-full flex justify-center items-center mt-8">
-              <BusTemplateType3/>
+          <div className="w-full h-104 border-2 ml-auto mr-auto block lg:flex items-center">
+            <div className="w-full flex justify-center items-center mt-[75px]">
+              <BusTemplateType3 />
             </div>
 
-            <div className=" w-1/5 border flex flex-col  justify-between py-2 items-center">
+            <div className=" w-1/5 border-t-2 mt-2 flex flex-col  justify-between py-2 items-center price-bar relative">
               <div className=" flex flex-col justify-start w-full pl-8 gap-20">
-                <div className=" mt-8 flex flex-col gap-2 ">
-                  <p className=" font-bold">Seçtiğiniz Koltuklar</p>
+                <div className=" mt-4 flex lg:flex-col gap-2 ">
+                  <p className=" font-bold mt-2">Seçtiğiniz Koltuklar</p>
                   <div>
                     <div className="seatPart">
                       <button className="seat">49</button>
@@ -117,23 +116,20 @@ const TableList = () => {
                   </div>
                 </div>
 
-                <div className=" flex flex-col gap-2">
-                  <p className="font-bold">Toplam Fiyat</p>
-                  <span className=" font-bold text-2xl">2196₺</span>
+                <div className=" flex flex-col gap-2 justify-start">
+                  <p className="font-bold text-xs">Toplam Fiyat</p>
+                  <span className=" font-bold text-md lg:text-2xl text-center bg-green text-white rounded-lg px-[3px] py-[5px]">2196₺</span>
                 </div>
               </div>
 
               <div>
-                <button className="bg-lightBlue hover:bg-darkBlue transition-all text-white p-2 rounded-xl m-2 font-bold" onClick={handleClickButton}>
+                <button className="bg-lightBlue hover:bg-darkBlue transition-all text-white p-2 rounded-xl m-2 font-bold onay-btn" onClick={handleClickButton}>
                   Onayla ve Devam Et
                 </button>
               </div>
             </div>
             
-          </div>
-          <div>
-            <Campaigns/>
-          </div>
+          </div>          
         
           </div>
         </div>
@@ -188,7 +184,7 @@ const TableList = () => {
 
       {
         isDropDown ? (
-          <button onClick={handleClickDetail} className=" absolute top-20 left-36 bg-darkBlue text-white p-1 rounded cursor-pointer">Sefer Detayları</button>
+          <button onClick={handleClickDetail} className=" absolute top-20 right-6 bg-darkBlue text-white p-1 rounded cursor-pointer">Sefer Detayları</button>
         ) : (null)
       }
     </div>

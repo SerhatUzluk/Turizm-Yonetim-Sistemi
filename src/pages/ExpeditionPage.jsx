@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { modalFalse } from '../redux/slices/ExpeditionSlice'
 import ExpeditionDetail from '../components/Table/ExpeditionDetail'
 import CampaignsPage from '../components/Campaigns/CampaignsPage'
+import Campaigns from '../components/Campaigns/Campaigns.jsx'
+
 
 const ExpeditionPage = () => {
   const dispatch = useDispatch();
@@ -17,12 +19,15 @@ const ExpeditionPage = () => {
 
   return (
     <div className=' relative flex p-3 gap-3 min-h-screen z-0'>
-        <div className=' flex-1 z-50'>
+        <div className='fixed flex-1 z-50'>
             <SideBar />
         </div>   
         <div className=' flex-[5] z-10'>
         <CampaignsPage />
-          <TableList />                
+          <TableList />    
+          <div>
+            <Campaigns/>
+          </div>    
         </div>
 
       <div className=' absolute w-full  h-[800px] flex justify-center items-center '>

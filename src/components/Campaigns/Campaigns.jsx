@@ -36,12 +36,18 @@ export function Campaigns() {
   };
   
   return (
-    <div className=" w-[620px] mx-auto my-10 font-gemunu">
-      <div className=" relative flex border bg-darkBlue">
+    <div className="md:w-[620px] mx-auto my-10 font-gemunu flex">
+      <button
+          className="transform bg-darkBlue text-white pt-16 pb-16 pl-2 pr-2 text-lg hover:bg-blue duration-300"
+          onClick={prevItem}
+        >
+          <FaChevronLeft className="text-6xl"/>
+        </button>
+      <div className=" relative flex border bg-darkBlue items-center">
         {campaignInfo?.map((item, i) => (
           <div key={i}>
             {currentItemIndex === i && (
-              <div className=" relative flex justify-center items-center ml-[34px] bg-light rounded">
+              <div className=" relative flex justify-center items-center bg-light rounded">
                 <img
                   className=" h-[200px] w-[250px] rounded"
                   src={item.image}
@@ -63,18 +69,12 @@ export function Campaigns() {
             
           </div>
         ))}
-        <div>
+        <div>        
         <button
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-darkBlue text-white pt-16 pb-16 pl-2 pr-2 text-lg hover:bg-blue duration-300 "
-          onClick={prevItem}
-        >
-          <FaChevronLeft />
-        </button>
-        <button
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-darkBlue text-white pt-16 pb-16 pl-2 pr-2 text-lg hover:bg-blue duration-300"
+          className="transform bg-darkBlue text-white pt-16 pb-16 pl-2 pr-2 text-lg hover:bg-blue duration-300"
           onClick={nextItem}
         >
-          <FaChevronRight />
+          <FaChevronRight className="text-6xl"/>
         </button>
         </div>
       </div>
